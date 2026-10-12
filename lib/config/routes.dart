@@ -5,6 +5,7 @@
 
 import 'dart:async';
 
+import 'package:footbag_network/config/setting_keys.dart';
 import 'package:footbag_network/config/themes.dart';
 import 'package:footbag_network/pages/archive/archive.dart';
 import 'package:footbag_network/pages/bootstrap/bootstrap_page.dart';
@@ -58,6 +59,34 @@ abstract class AppRoutes {
       ? null
       : '/home';
 
+  /// Blocks the homeserver picker whenever the app is pinned to one server.
+  ///
+  /// presetHomeserver only changes what the intro button does; the picker
+  /// routes stay registered, so without this guard a link to /home/sign_in
+  /// reaches a free-text homeserver field on our own origin. Anything typed
+  /// there that looks like a domain becomes selectable, gets connected to, and
+  /// is written back as the default — which is a credential phishing path
+  /// wearing our branding and our TLS certificate.
+  static FutureOr<String?> homeserverPickerRedirect(
+    BuildContext context,
+    GoRouterState state,
+  ) {
+    if (AppSettings.presetHomeserver.value.isNotEmpty) return '/home';
+    return loggedInRedirect(context, state);
+  }
+
+  /// Same guard for the add-account picker, which is reachable while logged in
+  /// and so is the more plausible-looking version of the same lure.
+  static FutureOr<String?> addAccountPickerRedirect(
+    BuildContext context,
+    GoRouterState state,
+  ) {
+    if (AppSettings.presetHomeserver.value.isNotEmpty) {
+      return '/rooms/settings/addaccount';
+    }
+    return loggedOutRedirect(context, state);
+  }
+
   AppRoutes();
 
   static final List<RouteBase> routes = [
@@ -78,13 +107,13 @@ abstract class AppRoutes {
           path: 'sign_in',
           pageBuilder: (context, state) =>
               defaultPageBuilder(context, state, SignInPage(signUp: false)),
-          redirect: loggedInRedirect,
+          redirect: homeserverPickerRedirect,
         ),
         GoRoute(
           path: 'sign_up',
           pageBuilder: (context, state) =>
               defaultPageBuilder(context, state, SignInPage(signUp: true)),
-          redirect: loggedInRedirect,
+          redirect: homeserverPickerRedirect,
         ),
         GoRoute(
           path: 'login',
@@ -294,7 +323,7 @@ abstract class AppRoutes {
                             state,
                             SignInPage(signUp: false),
                           ),
-                          redirect: loggedOutRedirect,
+                          redirect: addAccountPickerRedirect,
                         ),
                         GoRoute(
                           path: 'sign_up',
@@ -303,7 +332,7 @@ abstract class AppRoutes {
                             state,
                             SignInPage(signUp: true),
                           ),
-                          redirect: loggedOutRedirect,
+                          redirect: addAccountPickerRedirect,
                         ),
                         GoRoute(
                           path: 'login',
