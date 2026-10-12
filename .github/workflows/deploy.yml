@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: 2026-Present New York Footbag Association
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  REGISTRY: registry.korroni.com
+  IMAGE_NAME: footbag-network
+  KUBE_PROJECT_PATH: prod/footbag-network
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+
+      - uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - uses: docker/setup-buildx-action@v3
+
+      # A cold build compiles the Vodozemac WASM from Rust before it even
+      # reaches the Flutter web bundle, so it is slow; the GHA cache is what
+      # keeps later pushes tolerable.
+      - uses: docker/build-push-action@2cdde995de11925a030ce8070c3d77a52ffcf1c0 # v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  update-kube:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        with:
+          repository: gwbischof/kube
+          ssh-key: ${{ secrets.KUBE_DEPLOY_KEY }}
+
+      - name: Update image tag
+        run: |
+          cd ${{ env.KUBE_PROJECT_PATH }}
+          sed -i "s|newTag: .*# ${{ env.IMAGE_NAME }}$|newTag: ${{ github.sha }} # ${{ env.IMAGE_NAME }}|" kustomization.yaml
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "deploy: ${{ env.IMAGE_NAME }}:${{ github.sha }}"
+          git push

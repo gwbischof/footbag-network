@@ -30,6 +30,8 @@ COPY config.* /app/
 RUN flutter pub get
 RUN flutter build web --dart-define=FLUTTER_WEB_CANVASKIT_URL=canvaskit/ --release --source-maps
 
-FROM docker.io/nginx:alpine
-RUN rm -rf /usr/share/nginx/html
+# Unprivileged variant so the pod can run as non-root; it listens on 8080.
+FROM docker.io/nginxinc/nginx-unprivileged:alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/build/web /usr/share/nginx/html
+EXPOSE 8080
