@@ -5,9 +5,7 @@
 
 import 'package:footbag_network/config/app_config.dart';
 import 'package:footbag_network/l10n/l10n.dart';
-import 'package:footbag_network/pages/chat_list/active_call_indicator.dart';
 import 'package:footbag_network/pages/chat_list/unread_bubble.dart';
-import 'package:footbag_network/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
 import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:footbag_network/utils/room_status_extension.dart';
 import 'package:footbag_network/widgets/hover_builder.dart';
@@ -242,11 +240,6 @@ class ChatListItem extends StatelessWidget {
               ),
               subtitle: Row(
                 children: [
-                  if (room.hasActiveMatrixRtcCall)
-                    Padding(
-                      padding: const EdgeInsets.only(right: 4.0),
-                      child: ActiveCallIndicator(room: room),
-                    ),
                   if (typingText.isEmpty &&
                       ownMessage &&
                       room.lastEvent?.status.isSending == true) ...[

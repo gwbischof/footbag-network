@@ -12,7 +12,6 @@ import 'package:footbag_network/config/setting_keys.dart';
 import 'package:footbag_network/config/themes.dart';
 import 'package:footbag_network/l10n/l10n.dart';
 import 'package:footbag_network/widgets/app_lock.dart';
-import 'package:footbag_network/widgets/layouts/call_overlay.dart';
 import 'package:footbag_network/widgets/theme_builder.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
@@ -92,11 +91,7 @@ class FootbagNetworkApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         locale: locale,
         theme: AppThemes.buildTheme(context, Brightness.light, primaryColor),
-        darkTheme: AppThemes.buildTheme(
-          context,
-          Brightness.dark,
-          primaryColor,
-        ),
+        darkTheme: AppThemes.buildTheme(context, Brightness.dark, primaryColor),
         scrollBehavior: CustomScrollBehavior(),
         localizationsDelegates: [
           ...L10n.localizationsDelegates,
@@ -114,9 +109,7 @@ class FootbagNetworkApp extends StatelessWidget {
           child: Matrix(
             clients: clients,
             store: store,
-            child: CallOverlay(
-              child: testWidget ?? child ?? const SizedBox.shrink(),
-            ),
+            child: testWidget ?? child ?? const SizedBox.shrink(),
           ),
         ),
       ),

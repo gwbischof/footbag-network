@@ -24,7 +24,8 @@ abstract class AppConfig {
   static const double spaceBorderRadius = 11.0;
   static const double columnWidth = 360.0;
 
-  static const String enablePushTutorial = 'https://unifiedpush.org/users/intro/';
+  static const String enablePushTutorial =
+      'https://unifiedpush.org/users/intro/';
   static const String encryptionTutorial = 'https://matrix.org/faq/#encryption';
   static const String howDoIGetStickersTutorial =
       'https://github.com/gwbischof/footbag-network/blob/main/README.md';

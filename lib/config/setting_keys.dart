@@ -17,7 +17,10 @@ enum AppSettings<T> {
   textMessageMaxLength<int>('textMessageMaxLength', 16384),
 
   /// Max lines for unselected HTML/text bubbles; 0 = unlimited (no fade).
-  messagePreviewMaxLines<int>('com.footbagnetwork.message_preview_max_lines', 50),
+  messagePreviewMaxLines<int>(
+    'com.footbagnetwork.message_preview_max_lines',
+    50,
+  ),
   audioRecordingNumChannels<int>('audioRecordingNumChannels', 1),
   audioRecordingAutoGain<bool>('audioRecordingAutoGain', true),
   audioRecordingEchoCancel<bool>('audioRecordingEchoCancel', false),
@@ -25,7 +28,10 @@ enum AppSettings<T> {
   audioRecordingBitRate<int>('audioRecordingBitRate', 64000),
   audioRecordingSamplingRate<int>('audioRecordingSamplingRate', 48000),
   showNoGoogle<bool>('com.footbagnetwork.show_no_google', false),
-  unifiedPushRegistered<bool>('com.footbagnetwork.unifiedpush.registered', false),
+  unifiedPushRegistered<bool>(
+    'com.footbagnetwork.unifiedpush.registered',
+    false,
+  ),
   unifiedPushEndpoint<String>('com.footbagnetwork.unifiedpush.endpoint', ''),
   // No push gateway yet. FluffyChat's gateway is theirs, not ours; mobile push
   // needs our own (or UnifiedPush) before this does anything.
@@ -39,17 +45,32 @@ enum AppSettings<T> {
   hideRedactedEvents<bool>('com.footbagnetwork.hideRedactedEvents', false),
   hideUnknownEvents<bool>('com.footbagnetwork.hideUnknownEvents', true),
   autoplayImages<bool>('com.footbagnetwork.autoplay_images', true),
-  sendTypingNotifications<bool>('com.footbagnetwork.send_typing_notifications', true),
-  sendPublicReadReceipts<bool>('com.footbagnetwork.send_public_read_receipts', true),
-  swipeRightToLeftToReply<bool>('com.footbagnetwork.swipeRightToLeftToReply', true),
+  sendTypingNotifications<bool>(
+    'com.footbagnetwork.send_typing_notifications',
+    true,
+  ),
+  sendPublicReadReceipts<bool>(
+    'com.footbagnetwork.send_public_read_receipts',
+    true,
+  ),
+  swipeRightToLeftToReply<bool>(
+    'com.footbagnetwork.swipeRightToLeftToReply',
+    true,
+  ),
   sendOnEnter<bool>('com.footbagnetwork.send_on_enter', false),
-  displayNavigationRail<bool>('com.footbagnetwork.display_navigation_rail', false),
+  displayNavigationRail<bool>(
+    'com.footbagnetwork.display_navigation_rail',
+    false,
+  ),
   shareKeysWith<String>('com.footbagnetwork.share_keys_with_2', 'all'),
   noEncryptionWarningShown<bool>(
     'com.footbagnetwork.no_encryption_warning_shown',
     false,
   ),
-  displayChatDetailsColumn('com.footbagnetwork.display_chat_details_column', false),
+  displayChatDetailsColumn(
+    'com.footbagnetwork.display_chat_details_column',
+    false,
+  ),
   // AppConfig-mirrored settings
   applicationName<String>(
     'com.footbagnetwork.application_name',
@@ -63,7 +84,10 @@ enum AppSettings<T> {
   colorSchemeSeedInt<int>('com.footbagnetwork.color_scheme_seed', 0xFF2E8B2E),
   emojiSuggestionLocale<String>('emoji_suggestion_locale', ''),
   enableSoftLogout<bool>('com.footbagnetwork.enable_soft_logout', true),
-  enableMatrixNativeOIDC<bool>('com.footbagnetwork.enable_matrix_native_oidc', true),
+  enableMatrixNativeOIDC<bool>(
+    'com.footbagnetwork.enable_matrix_native_oidc',
+    true,
+  ),
   presetHomeserver<String>('com.footbagnetwork.preset_homeserver', ''),
   welcomeText<String>('com.footbagnetwork.welcome_text', ''),
   website<String>(
@@ -78,26 +102,28 @@ enum AppSettings<T> {
     'com.footbagnetwork.privacy_policy_url',
     'https://newyorkfootbag.com/privacy',
   ),
-  tos<String>(
-    'com.footbagnetwork.tos_url',
-    'https://newyorkfootbag.com/terms',
+  tos<String>('com.footbagnetwork.tos_url', 'https://newyorkfootbag.com/terms'),
+  sendTimelineEventTimeout<int>(
+    'com.footbagnetwork.send_timeline_event_timeout',
+    15,
   ),
-  sendTimelineEventTimeout<int>('com.footbagnetwork.send_timeline_event_timeout', 15),
   webNotificationSound<bool>('com.footbagnetwork.web_notification_sound', true),
   chatFilter<String>('com.footbagnetwork.chat_filter', 'allChats'),
   hideRoomsInSpaces<bool>('com.footbagnetwork.hideRoomsInSpaces', false),
-  showThumbnailsInTimeline<bool>('com.footbagnetwork.showThumbnailsInTimeline', true),
+  showThumbnailsInTimeline<bool>(
+    'com.footbagnetwork.showThumbnailsInTimeline',
+    true,
+  ),
   doubleTapToReact<bool>('com.footbagnetwork.double_tap_to_react', false),
   doubleTapReaction<String>('com.footbagnetwork.double_tap_reaction', '❤️'),
   benchmarksInLogs<bool>('com.footbagnetwork.benchmarks_in_logs', false),
-  autoSendErrorReports<bool?>('com.footbagnetwork.auto_send_eror_reports', null),
+  autoSendErrorReports<bool?>(
+    'com.footbagnetwork.auto_send_eror_reports',
+    null,
+  ),
   knownErrorHashes<List<String>>('com.footbagnetwork.known_crash_hashes', []),
   checkForUpdates<bool>('com.footbagnetwork.check_for_updates', true),
-  lastUpdateCheckDate<String>('com.footbagnetwork.last_update_check_date', ''),
-  fallbackLiveKitInstance<String>(
-    'com.footbagnetwork.fallback_live_kit_instance',
-    '',
-  );
+  lastUpdateCheckDate<String>('com.footbagnetwork.last_update_check_date', '');
 
   final String key;
   final T _defaultValue;

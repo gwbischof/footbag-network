@@ -9,7 +9,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:footbag_network/l10n/l10n.dart';
 import 'package:footbag_network/pages/new_group/new_group_view.dart';
 import 'package:footbag_network/utils/file_selector.dart';
-import 'package:footbag_network/utils/matrix_live_kit_calls/matrix_live_kit_call_member.dart';
 import 'package:footbag_network/widgets/matrix.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
@@ -82,11 +81,6 @@ class NewGroupController extends State<NewGroup> {
           ? sdk.CreateRoomPreset.publicChat
           : sdk.CreateRoomPreset.privateChat,
       groupName: nameController.text.isNotEmpty ? nameController.text : null,
-      powerLevelContentOverride: publicGroup
-          ? null
-          : {
-              'events': {MatrixRtcCallMember.eventType: 0},
-            },
       initialState: [
         if (avatar != null)
           sdk.StateEvent(

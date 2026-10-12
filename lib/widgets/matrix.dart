@@ -68,11 +68,6 @@ class MatrixState extends State<Matrix> {
 
   BackgroundPush? backgroundPush;
 
-  final ValueNotifier<String?> activeCallRoomId = ValueNotifier(null);
-  final ValueNotifier<CallPosition> callPosition = ValueNotifier(
-    CallPosition.fullScreen,
-  );
-
   Client get client {
     if (_activeClient < 0 || _activeClient >= widget.clients.length) {
       return currentBundle!.first!;
@@ -196,7 +191,8 @@ class MatrixState extends State<Matrix> {
   }
 
   String? get activeRoomId {
-    final route = FootbagNetworkApp.router.routeInformationProvider.value.uri.path;
+    final route =
+        FootbagNetworkApp.router.routeInformationProvider.value.uri.path;
     if (!route.startsWith('/rooms/')) return null;
     return route.split('/')[2];
   }
@@ -248,7 +244,11 @@ class MatrixState extends State<Matrix> {
           request.onUpdate = null;
           hidPopup = true;
           await KeyVerificationDialog(request: request).show(
-            FootbagNetworkApp.router.routerDelegate.navigatorKey.currentContext ??
+            FootbagNetworkApp
+                    .router
+                    .routerDelegate
+                    .navigatorKey
+                    .currentContext ??
                 context,
           );
         });
@@ -329,7 +329,11 @@ class MatrixState extends State<Matrix> {
         this,
         onFcmError: (errorMsg, {Uri? link}) async {
           final context =
-              FootbagNetworkApp.router.routerDelegate.navigatorKey.currentContext ??
+              FootbagNetworkApp
+                  .router
+                  .routerDelegate
+                  .navigatorKey
+                  .currentContext ??
               this.context;
           if (!context.mounted) return;
           final result = await showOkCancelAlertDialog(
@@ -433,5 +437,3 @@ class MatrixState extends State<Matrix> {
     file.save(context);
   }
 }
-
-enum CallPosition { fullScreen, top }

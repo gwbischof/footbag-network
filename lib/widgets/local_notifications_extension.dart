@@ -11,8 +11,6 @@ import 'package:footbag_network/utils/client_download_content_extension.dart';
 import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:footbag_network/utils/notification_background_handler.dart';
 import 'package:footbag_network/utils/push_helper.dart';
-import 'package:footbag_network/widgets/footbag_network_app.dart';
-import 'package:footbag_network/widgets/incoming_call_dialog.dart';
 import 'package:footbag_network/widgets/matrix.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
@@ -24,22 +22,6 @@ extension LocalNotificationsExtension on MatrixState {
     ..load();
 
   Future<void> showLocalNotification(Event event) async {
-    if (event.type == RtcNotificationContent.eventType &&
-        event.tryParseRtcNotificationContent()?.notificationType == .ring) {
-      final context =
-          FootbagNetworkApp.router.routerDelegate.navigatorKey.currentContext ??
-          this.context;
-      showDialog<bool>(
-        context: context,
-        builder: (_) => IncomingCallDialog(event: event),
-      ).then((joinCall) {
-        if (joinCall != true) return;
-        if (!context.mounted) return;
-        setActiveClient(event.room.client);
-        FootbagNetworkApp.router.go('/rooms/${event.room.id}?action=call');
-      });
-    }
-
     final l10n = L10n.of(context);
     final roomId = event.room.id;
     if (activeRoomId == roomId) {
@@ -119,12 +101,6 @@ extension LocalNotificationsExtension on MatrixState {
               LinuxNotificationAction(
                 key: NotificationActions.mute.name,
                 label: l10n.mute,
-              ),
-            ],
-            RtcNotificationContent.eventType => [
-              LinuxNotificationAction(
-                key: NotificationActions.enterCall.name,
-                label: l10n.enterCall,
               ),
             ],
             _ => [],

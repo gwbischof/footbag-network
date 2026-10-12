@@ -476,8 +476,7 @@ class Message extends StatelessWidget {
                                           ),
                                         ),
                                         constraints: const BoxConstraints(
-                                          maxWidth:
-                                              AppThemes.columnWidth * 1.5,
+                                          maxWidth: AppThemes.columnWidth * 1.5,
                                         ),
                                         child: Column(
                                           mainAxisSize: .min,

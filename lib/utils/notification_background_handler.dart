@@ -82,9 +82,7 @@ Future<void> notificationTapBackground(
   }
   final store = await AppSettings.init();
 
-  final payload = PushPayload.fromString(
-    notificationResponse.payload ?? '',
-  );
+  final payload = PushPayload.fromString(notificationResponse.payload ?? '');
   final clientName = payload.clientName;
   final client = clientName == null
       ? (await ClientManager.getClients(store: store, initialize: false)).first
@@ -118,9 +116,7 @@ Future<void> notificationTap(
     'Notification action handler started',
     notificationResponse.notificationResponseType.name,
   );
-  final payload = PushPayload.fromString(
-    notificationResponse.payload ?? '',
-  );
+  final payload = PushPayload.fromString(notificationResponse.payload ?? '');
   final client =
       clients.firstWhereOrNull(
         (client) => client.clientName == payload.clientName,
@@ -195,12 +191,10 @@ Future<void> notificationTap(
           await room.setPushRuleState(PushRuleState.mentionsOnly);
         case NotificationActions.open:
           router?.go('/rooms/$roomId?client=${client.clientName}');
-        case NotificationActions.enterCall:
-          router?.go('/rooms/$roomId?client=${client.clientName}&action=call');
       }
     case NotificationResponseType.notificationDismissed:
       return;
   }
 }
 
-enum NotificationActions { markAsRead, reply, mute, open, enterCall }
+enum NotificationActions { markAsRead, reply, mute, open }

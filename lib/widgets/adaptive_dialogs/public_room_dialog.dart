@@ -168,8 +168,8 @@ class PublicRoomDialog extends StatelessWidget {
                                                 child: AnimatedScale(
                                                   duration: AppThemes
                                                       .animationDuration,
-                                                  curve: AppThemes
-                                                      .animationCurve,
+                                                  curve:
+                                                      AppThemes.animationCurve,
                                                   scale: hovered
                                                       ? 1.33
                                                       : copied

@@ -11,8 +11,9 @@ import 'package:material_ui/material_ui.dart';
 import '../utils/footbag_network_tester.dart';
 import 'auth_flows.dart';
 
-Future<void> archiveChats(WidgetTester widgetTester) =>
-    widgetTester.startFootbagNetworkTest().then((tester) => tester._archiveChats());
+Future<void> archiveChats(WidgetTester widgetTester) => widgetTester
+    .startFootbagNetworkTest()
+    .then((tester) => tester._archiveChats());
 
 extension ChatFlows on FootbagNetworkTester {
   static const String groupChatName = 'Test Group 01';

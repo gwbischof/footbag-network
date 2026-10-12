@@ -13,7 +13,6 @@ import 'package:footbag_network/l10n/l10n.dart';
 import 'package:footbag_network/utils/custom_http_client.dart';
 import 'package:footbag_network/utils/custom_image_resizer.dart';
 import 'package:footbag_network/utils/init_with_restore.dart';
-import 'package:footbag_network/utils/matrix_live_kit_calls/matrix_live_kit_call_member.dart';
 import 'package:footbag_network/utils/notification_background_handler.dart';
 import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:matrix/encryption/utils/key_verification.dart';
@@ -129,8 +128,6 @@ abstract class ClientManager {
       importantStateEvents: <String>{
         // To make room emotes work
         'im.ponies.room_emotes',
-        // To display call state in chat list
-        MatrixRtcCallMember.eventType,
       },
       customImageResizer: PlatformInfos.supportsCustomImageResizer
           ? customImageResizer

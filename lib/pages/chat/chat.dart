@@ -24,7 +24,6 @@ import 'package:footbag_network/pages/chat_details/chat_details.dart';
 import 'package:footbag_network/utils/adaptive_bottom_sheet.dart';
 import 'package:footbag_network/utils/error_reporter.dart';
 import 'package:footbag_network/utils/file_selector.dart';
-import 'package:footbag_network/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
 import 'package:footbag_network/utils/matrix_sdk_extensions/event_extension.dart';
 import 'package:footbag_network/utils/matrix_sdk_extensions/filtered_timeline_extension.dart';
 import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_locals.dart';
@@ -440,10 +439,6 @@ class ChatController extends State<ChatPageWithRoom>
     _loadDraft();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _shareItems();
-      _checkMatrixRtcCallSupport();
-      if (widget.action == 'call') {
-        Matrix.of(context).activeCallRoomId.value = room.id;
-      }
     });
     web.window.addEventListener('paste', _handleClipboardFilePasteWeb);
 
@@ -470,18 +465,6 @@ class ChatController extends State<ChatPageWithRoom>
         : '';
     WidgetsBinding.instance.addObserver(this);
     _tryLoadTimeline();
-  }
-
-  Future<void> _checkMatrixRtcCallSupport() async {
-    try {
-      final urls = await room.client.getLiveKitServiceUrls();
-      if (urls.isEmpty) return;
-      setState(() {
-        supportLiveKitCalls = true;
-      });
-    } catch (e) {
-      Logs().d('Unable to check MatrixRTC call support', e);
-    }
   }
 
   final Set<String> expandedEventIds = {};
@@ -645,13 +628,6 @@ class ChatController extends State<ChatPageWithRoom>
     // We do not set read marker if timeline is empty
     final timeline = this.timeline;
     if (timeline == null || timeline.events.isEmpty) return;
-
-    // Do not set read marker on rtc notification while call is active. This
-    // mutes callkit.
-    if (room.hasActiveMatrixRtcCall &&
-        timeline.events.first.type == RtcNotificationContent.eventType) {
-      return;
-    }
 
     eventId ??= timeline.events.firstWhereOrNull((event) {
       if (event.eventId == room.lastEvent?.eventId) return true;
@@ -1662,12 +1638,6 @@ class ChatController extends State<ChatPageWithRoom>
     replyEvent = null;
     editEvent = null;
   });
-
-  void startOrJoinVideoCall() {
-    Matrix.of(context).activeCallRoomId.value = room.id;
-  }
-
-  bool supportLiveKitCalls = false;
 
   Future<void> _cancelEditWithConfirmation() async {
     final originalText = editEvent!
