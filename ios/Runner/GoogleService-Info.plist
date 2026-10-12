@@ -1,34 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+	PLACEHOLDER — not a working Firebase configuration.
+
+	The upstream FluffyChat file here held FluffyChat's own Firebase project
+	(bundle id im.fluffychat.app) and was removed: it is not ours to ship, and
+	Firebase rejects a config whose BUNDLE_ID does not match the app's.
+
+	To enable iOS push notifications, create a Firebase project for
+	com.footbagnetwork.app and replace this file with its real
+	GoogleService-Info.plist. Until then iOS push is inert.
+
+	Android has no equivalent file checked in; upstream adds it via
+	scripts/add-firebase-messaging.sh.
+-->
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>865731724731-ofdr7e6m04murgb1bvchlj9oaos0q5i3.apps.googleusercontent.com</string>
+	<string></string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.865731724731-ofdr7e6m04murgb1bvchlj9oaos0q5i3</string>
+	<string></string>
 	<key>API_KEY</key>
-	<string>AIzaSyA8ZUBcuny0HjPwF2Q2fvDyQTC5dG2VHlE</string>
+	<string></string>
 	<key>GCM_SENDER_ID</key>
-	<string>865731724731</string>
+	<string></string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>im.fluffychat.app</string>
+	<string>com.footbagnetwork.app</string>
 	<key>PROJECT_ID</key>
-	<string>fluffychat-ef3e8</string>
+	<string></string>
 	<key>STORAGE_BUCKET</key>
-	<string>fluffychat-ef3e8.appspot.com</string>
+	<string></string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:865731724731:ios:79fd983ce46cb40c64309e</string>
+	<string></string>
 </dict>
 </plist>
