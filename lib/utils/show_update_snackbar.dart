@@ -20,7 +20,7 @@ abstract class UpdateNotifier {
   static const String versionStoreKey = 'last_known_version';
   static const String dismissedUpdateStoreKey = 'dismissed_update_version';
   static const String _windowsInstallerAssetName =
-      'fluffychat-windows-x64-setup.exe';
+      'footbag-network-windows-x64-setup.exe';
 
   /// Checks GitHub for a newer release with a Windows installer and
   /// displays a banner with a download link. Only for Windows, as all other
