@@ -57,24 +57,39 @@ logo.
 
 ## How to build
 
-Requires [Flutter](https://flutter.dev). Some dependencies (the Vodozemac crypto
-library) are Rust-based but ship prebuilt — you only need
-[Rust](https://www.rust-lang.org/tools/install) if you're rebuilding those from source.
+Requires [Flutter](https://flutter.dev) **3.47.4 or newer** — the project needs
+Dart >= 3.11.1 and fails to resolve dependencies on older SDKs. The exact version
+is pinned in `.fvmrc`, so the simplest setup is [fvm](https://fvm.app):
 
 ```bash
 git clone https://github.com/gwbischof/footbag-network.git
 cd footbag-network
-flutter pub get
+fvm use            # installs the pinned Flutter, leaves your global one alone
+fvm flutter pub get
 ```
+
+Prefix commands with `fvm` (`fvm flutter`, `fvm dart`) so they use the pinned SDK.
+If your system Flutter is already new enough, drop the prefix.
 
 ### Web
 
+The web build compiles the Vodozemac crypto library to WASM from Rust, so this
+step needs [Rust](https://www.rust-lang.org/tools/install) and `yq`:
+
 ```bash
-./scripts/prepare-web.sh   # installs Vodozemac (required)
-flutter build web --release
+./scripts/prepare-web.sh   # builds Vodozemac WASM (required)
+fvm flutter build web --release
 ```
 
-Run locally with `flutter run -d chrome`.
+Run locally with `fvm flutter run -d chrome`.
+
+To skip the toolchain entirely, build the container instead — it installs
+everything and is what CI runs:
+
+```bash
+docker build -t footbag-network .
+docker run --rm -p 8080:8080 footbag-network
+```
 
 Optionally configure by serving a `config.json` alongside the app — see
 `config.sample.json`. Only include the keys you actually want to override.
