@@ -1,0 +1,103 @@
+#!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2026-Present New York Footbag Association
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+"""Generate the Content-Security-Policy for the built web bundle.
+
+Flutter emits its bootstrap as a large inline <script> in index.html, so a
+script-src without 'unsafe-inline' blocks it and the app never starts. The
+content of that script changes on every build (it embeds the service worker
+version and build config), so a hash committed to the repo would silently
+break the next rebuild.
+
+This hashes whatever inline scripts the build actually produced and writes an
+nginx snippet defining $csp. Run after `flutter build web`; the output is
+included from nginx.conf.
+"""
+
+import base64
+import hashlib
+import pathlib
+import re
+import sys
+
+HOMESERVER = "https://chat.korroni.com"
+
+# Everything is same-origin except the homeserver: media and avatars are
+# fetched from it, and it is the only host the app may talk to. connect-src is
+# the directive that matters here -- the access token and E2EE keys live in
+# IndexedDB, and the build pulls third-party JS (native_imaging) into this
+# origin, so this is what stops either being posted elsewhere.
+#
+# About script-src, honestly: 'unsafe-eval' is here because dart2js output
+# calls eval() and the app renders a blank page without it -- verified by
+# toggling it on a built image. 'wasm-unsafe-eval' stays because CanvasKit
+# compiles WebAssembly; it is narrower and not implied by 'unsafe-eval'.
+#
+# That makes script-src the weakest directive in this policy, which is
+# tolerable here: CanvasKit paints to a canvas rather than the DOM, so a
+# hostile Matrix message is not a DOM-XSS vector. The directives doing real
+# work are connect-src, object-src, base-uri and form-action. Escaping
+# 'unsafe-eval' would mean compiling to WASM instead of dart2js -- a separate
+# piece of work, not a config tweak.
+#
+# blob: workers and inline styles are likewise Flutter requirements.
+def policy(script_hashes: list[str]) -> str:
+    sources = " ".join(
+        ["'self'", "'wasm-unsafe-eval'", "'unsafe-eval'", *script_hashes]
+    )
+    return "; ".join(
+        [
+            "default-src 'self'",
+            f"script-src {sources}",
+            "worker-src 'self' blob:",
+            "style-src 'self' 'unsafe-inline'",
+            "font-src 'self' data:",
+            f"img-src 'self' data: blob: {HOMESERVER}",
+            f"media-src 'self' data: blob: {HOMESERVER}",
+            f"connect-src 'self' {HOMESERVER} wss://chat.korroni.com",
+            "base-uri 'self'",
+            "form-action 'self'",
+            "object-src 'none'",
+            "frame-ancestors 'self'",
+        ]
+    )
+
+
+def main() -> int:
+    index = pathlib.Path(sys.argv[1])
+    out = pathlib.Path(sys.argv[2])
+
+    html = index.read_text(encoding="utf-8")
+    inline = [
+        m.group(1)
+        for m in re.finditer(
+            r"<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>", html, re.S | re.I
+        )
+    ]
+
+    # Fail loudly rather than emit a policy that would blank the page. If
+    # Flutter ever stops inlining its bootstrap this should be revisited, not
+    # silently papered over.
+    if not inline:
+        print(
+            "gen-csp: no inline <script> found in index.html — refusing to "
+            "emit a CSP that has not been verified against the real bundle",
+            file=sys.stderr,
+        )
+        return 1
+
+    hashes = [
+        "'sha256-"
+        + base64.b64encode(hashlib.sha256(s.encode("utf-8")).digest()).decode()
+        + "'"
+        for s in inline
+    ]
+
+    out.write_text(f'set $csp "{policy(hashes)}";\n', encoding="utf-8")
+    print(f"gen-csp: hashed {len(hashes)} inline script(s) -> {out}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
