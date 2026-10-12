@@ -2510,8 +2510,6 @@
     "hideRoomsInSpaces": "Ukryj pokoje, które są w przestrzeni",
     "possibleByYou": "To wydanie było tylko możliwe dzięki twojemu wsparciu. Footbag Network pozostaje darmowe, otwartoźródłowe i w całości oparty na inicjatywie społeczności.",
     "showThumbnailsInTimeline": "Wyświetl miniatury zdjęć i filmów",
-    "appSubtitle": "Bezpieczna komunikacja [matrix]",
-    "appDescription": "Komunikuj się w sposób zaszyfrowany za pośrednictwem zdecentralizowanej sieci [matrix] – w łatwy i dostępny dla wszystkich sposób.",
     "interactiveVerification": "Weryfikacja interaktywna",
     "interactiveVerificationDescription": "Jeżeli jesteście obok siebie albo komunikujecie się przez bezpieczny kanał to możecie zweryfikować wszystkie urządzenia naraz przez porównywanie numeru bezpieczeństwa lub emoji.",
     "countUnverifiedDevices": "{count} niezweryfikowanych urządzeń w czacie.",

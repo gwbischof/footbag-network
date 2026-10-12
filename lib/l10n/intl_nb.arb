@@ -2517,8 +2517,6 @@
     "hideRoomsInSpaces": "Skjul rom som er med i en romgruppe",
     "possibleByYou": "Denne versjonen var bare mulig takket være din støtte. Footbag Network forblir gratis, har åpen kildekode og er helt fellesskapsdrevet.",
     "showThumbnailsInTimeline": "Vis miniatyrbilder av bilder og videoer",
-    "appSubtitle": "Sikker [matrix]-kommunikasjon",
-    "appDescription": "Kommuniser kryptert over det desentraliserte [matrix]-nettverket på en enkel og tilgjengelig måte for alle.",
     "interactiveVerification": "Interaktiv verifisering",
     "interactiveVerificationDescription": "Hvis dere står ved siden av hverandre eller kommuniserer via en sikker kanal, kan dere verifisere alle enhetene samtidig ved å sammenligne et sikkerhetsnummer eller emojier.",
     "countUnverifiedDevices": "{count} uverifiserte enheter i chatten.",

@@ -2504,8 +2504,6 @@
     "hideRoomsInSpaces": "Cacher les salons qui sont dans un espace",
     "possibleByYou": "Cette mise à jour a été possible uniquement grâce à votre support. Footbag Network restera gratuit, open-source et entièrement communautaire.",
     "showThumbnailsInTimeline": "Afficher les apperçus des images et vidéos",
-    "appSubtitle": "Communication [matrix] Sécurisée",
-    "appDescription": "Communiquez de façon chiffrée sur le réseau décentralisé [matrix] de façon aisée et accessible pour tous.",
     "interactiveVerification": "Vérification intéractive",
     "interactiveVerificationDescription": "Si vous êtes l'un à coté de l'autre ou que vous communiquez par un canal sécurisé, vous pouvez vérifier tous vos appareils en une seule fois en comparant un numéro de sécurité ou des émoticônes.",
     "countUnverifiedDevices": "{count} appareils non-vérifiés dans la discussion.",

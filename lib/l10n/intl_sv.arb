@@ -2491,8 +2491,6 @@
     "hideRoomsInSpaces": "Dölj rum som är i en plats",
     "possibleByYou": "Denna utgåva var endast möjlig tack vare ditt stöd. Footbag Network behålls gratis, öppen källkod, och helt gemenskapsdriven.",
     "showThumbnailsInTimeline": "Visa förhandsvisning av bilder och videor",
-    "appSubtitle": "Säker [matrix]-kommunikation",
-    "appDescription": "Kommunicera krypterat över det decentraliserade [matrix]-nätverket på ett enkelt och tillgängligt sätt för alla.",
     "interactiveVerification": "Interaktiv verifikation",
     "interactiveVerificationDescription": "Om ni är nära varandra eller kommunicerar genom en säker kanal kan nu verifiera alla enheter samtidigt genom att jämföra ett säkerhetsnummer eller emojis.",
     "countUnverifiedDevices": "{count} overifierade enheter i chatten.",

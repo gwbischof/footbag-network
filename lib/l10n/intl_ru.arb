@@ -2500,7 +2500,6 @@
     "removeTag": "Удалить тег",
     "tagName": "Название тега",
     "createNewTag": "Создать новый тег",
-    "appSubtitle": "Защитить коммуникацию [matrix]",
     "passphrasesMatch": "Кодовые фразы соовпадают",
     "@passphrasesMatch": {
         "type": "String",
@@ -2623,7 +2622,6 @@
     "uploading": "Загружаем",
     "yesterday": "Вчера",
     "showThumbnailsInTimeline": "Показать миниатюры картинок и видео",
-    "appDescription": "Общайтесь зашифрованным образом по децентрализованной сети [matrix] простым и доступным для всех способом.",
     "interactiveVerificationDescription": "Если вы находитесь рядом с собеседником, либо общаетесь с помощью другого надёжного канала связи, вы можете подтвердить ваши устройства, сравнив ключи шифрования или эмодзи.",
     "countUnverifiedDevices": "В этом чате {count} устройств не подтверждены.",
     "@countUnverifiedDevices": {

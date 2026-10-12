@@ -2511,8 +2511,6 @@
     "hideRoomsInSpaces": "Peida jututoad, mis on osa kogukonnast",
     "possibleByYou": "Selle versiooni väljaandmine oli võimalik vaid sinu toetusele. Footbag Network jääb vabaks, avatud lähtekoodi põhiseks ja kogukonnakeskseks.",
     "showThumbnailsInTimeline": "Näita piltide ja videote pisipilte",
-    "appSubtitle": "Turvaline suhtlus [matrix]'i võrgus",
-    "appDescription": "Suhtle krüptitult hajutatud [matrix] võrgustikus viisil, mis on lihtne ja kõigile kättesaadav.",
     "interactiveVerification": "Interaktiivne verifitseerimine",
     "interactiveVerificationDescription": "Kui asute üksteise kõrval või kasutate turvalist suhtluskanalit, siis võite kohe verifitseerida üksteise seadmed võrreldes numbreid või emojisid.",
     "countUnverifiedDevices": "Selles vestluses on {count} verifitseerimata seadet.",

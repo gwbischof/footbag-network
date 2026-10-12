@@ -2491,8 +2491,6 @@
     "possibleByYou": "Šis laidiens bija iespējams pateicoties Tavam atbalstam. Footbag Network joprojām ir brīva, atvērta pirmkoda un pilnībā kopienas virzīta.",
     "hideRoomsInSpaces": "Paslēpt istabas, kas ir vietā",
     "showThumbnailsInTimeline": "Rādīt attēlu un video sīktēlus",
-    "appSubtitle": "Droša [matrix] saziņa",
-    "appDescription": "Šifrēta saziņa decentralizētā [matrix] tīklā visiem vienkāršā un pieejamā veidā.",
     "interactiveVerification": "Mijiedarbīga apliecināšana",
     "interactiveVerificationDescription": "Ja esat viens otram blakus vai sazināties drošā veidā, tad varat apliecināt visas ierīces uzreiz ar drošības skaitļa vai emocijzīmju salīdzināšanu.",
     "countUnverifiedDevices": "Tērzēšanā ir {count, plural, zero{{count} neapliecinātu ierīču} one{{count} neapliecināta ierīce} other{{count} neapliecinātas ierīces}}.",
