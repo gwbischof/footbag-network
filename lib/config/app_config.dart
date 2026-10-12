@@ -11,7 +11,6 @@ abstract class AppConfig {
 
   static const Color chatColor = primaryColor;
   static const double messageFontSize = 16.0;
-  static const bool allowOtherHomeservers = false;
   static const bool enableRegistration = true;
   static const bool hideTypingUsernames = false;
 

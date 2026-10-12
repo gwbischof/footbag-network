@@ -2542,7 +2542,7 @@
     "advancedConfigurations": "Advanced configurations",
     "signIn": "Sign in",
     "createNewAccount": "Create new account",
-    "signUpGreeting": "Footbag Network is decentralized! Select a server where you want to create your account and let's go!",
+    "signUpGreeting": "Welcome to Footbag Network! Create an account to get started.",
     "signInGreeting": "You already have an account in Matrix? Welcome back! Select your homeserver and sign in.",
     "theProcessWasCanceled": "The process was canceled.",
     "join": "Join",

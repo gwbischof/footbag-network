@@ -88,7 +88,12 @@ enum AppSettings<T> {
     'com.footbagnetwork.enable_matrix_native_oidc',
     true,
   ),
-  presetHomeserver<String>('com.footbagnetwork.preset_homeserver', ''),
+  // Non-empty pins the app to one homeserver: the intro screen connects
+  // straight to it and the server picker is never shown.
+  presetHomeserver<String>(
+    'com.footbagnetwork.preset_homeserver',
+    'chat.korroni.com',
+  ),
   welcomeText<String>('com.footbagnetwork.welcome_text', ''),
   website<String>(
     'com.footbagnetwork.website_url',
