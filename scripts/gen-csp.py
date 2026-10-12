@@ -27,6 +27,17 @@ HOMESERVER = "https://chat.korroni.com"
 # connect-src to POST events; without both the analytics silently do nothing.
 ANALYTICS = "https://stats.korroni.com"
 
+# CanvasKit's font system fetches Roboto and the Noto fallback chain from
+# Google at runtime, for glyphs outside the bundled font. --no-web-resources-cdn
+# bundles CanvasKit and a local Roboto but does NOT stop this; the engine still
+# reaches for fonts.gstatic.com. Blocking it leaves the app with no font data at
+# all, so it renders its layout and images and draws no text whatsoever.
+#
+# This was shipped broken once. It passed review because the browser doing the
+# checking had the fonts cached from earlier builds -- warm cache rendered fine,
+# cold cache showed a textless page. Verify font changes in a cold context.
+FONTS = "https://fonts.gstatic.com"
+
 # Everything is same-origin except the homeserver: media and avatars are
 # fetched from it, and it is the only host the app may talk to. connect-src is
 # the directive that matters here -- the access token and E2EE keys live in
@@ -56,10 +67,10 @@ def policy(script_hashes: list[str]) -> str:
             f"script-src {sources}",
             "worker-src 'self' blob:",
             "style-src 'self' 'unsafe-inline'",
-            "font-src 'self' data:",
+            f"font-src 'self' data: {FONTS}",
             f"img-src 'self' data: blob: {HOMESERVER}",
             f"media-src 'self' data: blob: {HOMESERVER}",
-            f"connect-src 'self' {HOMESERVER} wss://chat.korroni.com {ANALYTICS}",
+            f"connect-src 'self' {HOMESERVER} wss://chat.korroni.com {ANALYTICS} {FONTS}",
             "base-uri 'self'",
             "form-action 'self'",
             "object-src 'none'",
