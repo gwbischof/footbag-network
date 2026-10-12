@@ -4,16 +4,16 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:cupertino_ui/cupertino_ui.dart';
-import 'package:fluffychat/config/setting_keys.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/chat_list/chat_list.dart';
-import 'package:fluffychat/pages/chat_list/chat_list_item.dart';
-import 'package:fluffychat/pages/chat_list/dummy_chat_list_item.dart';
-import 'package:fluffychat/pages/chat_list/search_title.dart';
-import 'package:fluffychat/pages/chat_list/space_view.dart';
-import 'package:fluffychat/utils/stream_extension.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/public_room_dialog.dart';
-import 'package:fluffychat/widgets/avatar.dart';
+import 'package:footbag_network/config/setting_keys.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/chat_list/chat_list.dart';
+import 'package:footbag_network/pages/chat_list/chat_list_item.dart';
+import 'package:footbag_network/pages/chat_list/dummy_chat_list_item.dart';
+import 'package:footbag_network/pages/chat_list/search_title.dart';
+import 'package:footbag_network/pages/chat_list/space_view.dart';
+import 'package:footbag_network/utils/stream_extension.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/public_room_dialog.dart';
+import 'package:footbag_network/widgets/avatar.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 

@@ -1,68 +1,64 @@
 // SPDX-FileCopyrightText: 2019-Present Christian Kußowski
 // SPDX-FileCopyrightText: 2019-Present Contributors to FluffyChat
+// SPDX-FileCopyrightText: 2026-Present New York Footbag Association
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'dart:ui';
 
 abstract class AppConfig {
-  static const Color primaryColor = Color(0xFF261386);
+  static const Color primaryColor = Color(0xFF2E8B2E);
 
   static const Color chatColor = primaryColor;
   static const double messageFontSize = 16.0;
-  static const bool allowOtherHomeservers = true;
+  static const bool allowOtherHomeservers = false;
   static const bool enableRegistration = true;
   static const bool hideTypingUsernames = false;
 
   static const String inviteLinkPrefix = 'https://matrix.to/#/';
-  static const String deepLinkPrefix = 'im.fluffychat://chat/';
+  static const String deepLinkPrefix = 'com.footbagnetwork://chat/';
   static const String schemePrefix = 'matrix:';
-  static const String pushNotificationsChannelId = 'fluffychat_push';
-  static const String pushNotificationsAppId = 'chat.fluffy.fluffychat';
+  static const String pushNotificationsChannelId = 'footbag_network_push';
+  static const String pushNotificationsAppId = 'com.footbagnetwork.app';
   static const double borderRadius = 18.0;
   static const double spaceBorderRadius = 11.0;
   static const double columnWidth = 360.0;
 
-  static const String enablePushTutorial =
-      'https://ko-fi.com/post/How-can-I-get-Push-Notifications-without-Google-N7Q825URG6?fromEditor=true';
-  static const String encryptionTutorial =
-      'https://ko-fi.com/post/How-to-use-end-to-end-encryption-in-FluffyChat-A5O725WDR5';
+  static const String enablePushTutorial = 'https://unifiedpush.org/users/intro/';
+  static const String encryptionTutorial = 'https://matrix.org/faq/#encryption';
   static const String howDoIGetStickersTutorial =
-      'https://ko-fi.com/post/How-to-add-a-sticker-pack-to-FluffyChat-N4N01OXATI';
-  static const String appId = 'im.fluffychat.app';
-  static const String appOpenUrlScheme = 'im.fluffychat';
-  static const String appSsoUrlScheme = 'im.fluffychat.auth';
+      'https://github.com/gwbischof/footbag-network/blob/main/README.md';
+  static const String appId = 'com.footbagnetwork.app';
+  static const String appOpenUrlScheme = 'com.footbagnetwork';
+  static const String appSsoUrlScheme = 'com.footbagnetwork.auth';
   // Identifies the notification activation callback on Windows. Never change!
   static const String windowsNotificationGuid =
-      '4894dfda-c70a-4ebc-b139-acae55f3988d';
+      'eebeef3a-be38-4f74-9449-fb68522071b5';
 
   static const String sourceCodeUrl =
-      'https://github.com/krille-chan/fluffychat';
+      'https://github.com/gwbischof/footbag-network';
   static const String supportUrl =
-      'https://github.com/krille-chan/fluffychat/issues';
-  static const String changelogUrl = 'https://fluffychat.im/changelog/';
+      'https://github.com/gwbischof/footbag-network/issues';
+  static const String changelogUrl =
+      'https://github.com/gwbischof/footbag-network/releases';
   static const String latestReleaseApiUrl =
-      'https://api.github.com/repos/krille-chan/fluffychat/releases/latest';
+      'https://api.github.com/repos/gwbischof/footbag-network/releases/latest';
   static const String helpUrl =
-      'https://ko-fi.com/post/How-can-I-support-FluffyChat-J2G325WE6I';
+      'https://github.com/gwbischof/footbag-network/issues';
 
   static const Set<String> defaultReactions = {'👍', '❤️', '😂', '😮', '😢'};
 
   static final Uri newIssueUrl = Uri(
     scheme: 'https',
     host: 'github.com',
-    path: '/krille-chan/fluffychat/issues/new',
+    path: '/gwbischof/footbag-network/issues/new',
   );
 
   static final Uri homeserverList = Uri(
     scheme: 'https',
     host: 'raw.githubusercontent.com',
-    path: 'krille-chan/fluffychat/refs/heads/main/recommended_homeservers.json',
-  );
-
-  static final Uri crashReportEndpoint = Uri(
-    scheme: 'https',
-    host: 'crash.fluffy.chat',
+    path:
+        'gwbischof/footbag-network/refs/heads/main/recommended_homeservers.json',
   );
 
   static const String mainIsolatePortName = 'main_isolate';

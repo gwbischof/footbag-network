@@ -4,15 +4,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:emoji_picker_flutter/locales/default_emoji_set_locale.dart';
-import 'package:fluffychat/config/setting_keys.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/chat/recording_input_row.dart';
-import 'package:fluffychat/pages/chat/recording_view_model.dart';
-import 'package:fluffychat/utils/other_party_can_receive.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
-import 'package:fluffychat/widgets/avatar.dart';
-import 'package:fluffychat/widgets/hover_builder.dart';
-import 'package:fluffychat/widgets/matrix.dart';
+import 'package:footbag_network/config/setting_keys.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/chat/recording_input_row.dart';
+import 'package:footbag_network/pages/chat/recording_view_model.dart';
+import 'package:footbag_network/utils/other_party_can_receive.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
+import 'package:footbag_network/widgets/avatar.dart';
+import 'package:footbag_network/widgets/hover_builder.dart';
+import 'package:footbag_network/widgets/matrix.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 

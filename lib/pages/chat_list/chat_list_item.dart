@@ -3,15 +3,15 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/config/app_config.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/chat_list/active_call_indicator.dart';
-import 'package:fluffychat/pages/chat_list/unread_bubble.dart';
-import 'package:fluffychat/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
-import 'package:fluffychat/utils/matrix_sdk_extensions/matrix_locals.dart';
-import 'package:fluffychat/utils/room_status_extension.dart';
-import 'package:fluffychat/widgets/hover_builder.dart';
-import 'package:fluffychat/widgets/typing_animation.dart';
+import 'package:footbag_network/config/app_config.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/chat_list/active_call_indicator.dart';
+import 'package:footbag_network/pages/chat_list/unread_bubble.dart';
+import 'package:footbag_network/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
+import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_locals.dart';
+import 'package:footbag_network/utils/room_status_extension.dart';
+import 'package:footbag_network/widgets/hover_builder.dart';
+import 'package:footbag_network/widgets/typing_animation.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 

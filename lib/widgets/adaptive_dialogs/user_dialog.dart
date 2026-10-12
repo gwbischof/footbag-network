@@ -3,16 +3,16 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/config/themes.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/utils/date_time_extension.dart';
-import 'package:fluffychat/utils/fluffy_share.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_text_input_dialog.dart';
-import 'package:fluffychat/widgets/avatar.dart';
-import 'package:fluffychat/widgets/presence_builder.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:footbag_network/config/themes.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/utils/date_time_extension.dart';
+import 'package:footbag_network/utils/fluffy_share.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_text_input_dialog.dart';
+import 'package:footbag_network/widgets/avatar.dart';
+import 'package:footbag_network/widgets/presence_builder.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';

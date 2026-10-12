@@ -4,11 +4,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:collection/collection.dart' show IterableExtension;
-import 'package:fluffychat/config/app_config.dart';
-import 'package:fluffychat/widgets/avatar.dart';
-import 'package:fluffychat/widgets/future_loading_dialog.dart';
-import 'package:fluffychat/widgets/matrix.dart';
-import 'package:fluffychat/widgets/mxc_image.dart';
+import 'package:footbag_network/config/app_config.dart';
+import 'package:footbag_network/widgets/avatar.dart';
+import 'package:footbag_network/widgets/future_loading_dialog.dart';
+import 'package:footbag_network/widgets/matrix.dart';
+import 'package:footbag_network/widgets/mxc_image.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 

@@ -3,10 +3,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/config/setting_keys.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_text_input_dialog.dart';
-import 'package:fluffychat/widgets/matrix.dart';
+import 'package:footbag_network/config/setting_keys.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_text_input_dialog.dart';
+import 'package:footbag_network/widgets/matrix.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';

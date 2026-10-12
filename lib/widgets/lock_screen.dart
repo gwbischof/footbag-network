@@ -5,9 +5,9 @@
 
 import 'dart:async';
 
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/widgets/app_lock.dart';
 import 'package:flutter/services.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/widgets/app_lock.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:material_ui/material_ui.dart';
 

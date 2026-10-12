@@ -8,15 +8,15 @@ import 'dart:isolate';
 import 'dart:ui';
 
 import 'package:collection/collection.dart';
-import 'package:fluffychat/config/app_config.dart';
-import 'package:fluffychat/utils/client_manager.dart';
-import 'package:fluffychat/utils/error_reporter.dart';
-import 'package:fluffychat/utils/notification_background_handler.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
-import 'package:fluffychat/utils/start_push_foreground_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_vodozemac/flutter_vodozemac.dart' as vod;
+import 'package:footbag_network/config/app_config.dart';
+import 'package:footbag_network/utils/client_manager.dart';
+import 'package:footbag_network/utils/error_reporter.dart';
+import 'package:footbag_network/utils/notification_background_handler.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
+import 'package:footbag_network/utils/start_push_foreground_service.dart';
 import 'package:just_audio_media_kit/just_audio_media_kit.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
@@ -121,11 +121,11 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   if (PlatformInfos.supportsAppLock) {
     try {
       pin = await const FlutterSecureStorage().read(
-        key: 'chat.fluffy.app_lock',
+        key: 'com.footbagnetwork.app_lock',
       );
       useBiometrics =
           (await const FlutterSecureStorage().read(
-            key: 'chat.fluffy.use_biometrics',
+            key: 'com.footbagnetwork.use_biometrics',
           )) ==
           'true';
     } catch (e, s) {

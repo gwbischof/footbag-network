@@ -5,16 +5,16 @@
 
 import 'package:collection/collection.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/chat_details/chat_details_view.dart';
-import 'package:fluffychat/pages/settings/settings.dart';
-import 'package:fluffychat/utils/file_selector.dart';
-import 'package:fluffychat/utils/matrix_sdk_extensions/matrix_locals.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_modal_action_popup.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_text_input_dialog.dart';
-import 'package:fluffychat/widgets/future_loading_dialog.dart';
-import 'package:fluffychat/widgets/matrix.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/chat_details/chat_details_view.dart';
+import 'package:footbag_network/pages/settings/settings.dart';
+import 'package:footbag_network/utils/file_selector.dart';
+import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_locals.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_modal_action_popup.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_text_input_dialog.dart';
+import 'package:footbag_network/widgets/future_loading_dialog.dart';
+import 'package:footbag_network/widgets/matrix.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';

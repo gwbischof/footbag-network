@@ -5,15 +5,15 @@
 
 import 'package:collection/collection.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
-import 'package:fluffychat/config/setting_keys.dart';
-import 'package:fluffychat/config/themes.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/utils/code_highlight_theme.dart';
-import 'package:fluffychat/utils/event_checkbox_extension.dart';
-import 'package:fluffychat/widgets/avatar.dart';
-import 'package:fluffychat/widgets/future_loading_dialog.dart';
-import 'package:fluffychat/widgets/mxc_image.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:footbag_network/config/setting_keys.dart';
+import 'package:footbag_network/config/themes.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/utils/code_highlight_theme.dart';
+import 'package:footbag_network/utils/event_checkbox_extension.dart';
+import 'package:footbag_network/widgets/avatar.dart';
+import 'package:footbag_network/widgets/future_loading_dialog.dart';
+import 'package:footbag_network/widgets/mxc_image.dart';
 import 'package:highlight/highlight.dart' show highlight;
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart' as parser;

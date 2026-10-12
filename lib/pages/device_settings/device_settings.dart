@@ -5,12 +5,12 @@
 
 import 'package:async/async.dart' show Result;
 import 'package:collection/collection.dart' show IterableExtension;
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/device_settings/device_settings_view.dart';
-import 'package:fluffychat/pages/key_verification/key_verification_dialog.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_text_input_dialog.dart';
-import 'package:fluffychat/widgets/future_loading_dialog.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/device_settings/device_settings_view.dart';
+import 'package:footbag_network/pages/key_verification/key_verification_dialog.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_text_input_dialog.dart';
+import 'package:footbag_network/widgets/future_loading_dialog.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/encryption.dart';
 import 'package:matrix/matrix.dart' hide Result;

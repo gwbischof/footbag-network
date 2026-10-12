@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/utils/platform_infos.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:matrix/matrix_api_lite/utils/logs.dart';
 import 'package:universal_html/html.dart' as html;
 
@@ -45,7 +45,7 @@ abstract class ForegroundServices {
         );
         FlutterForegroundTask.init(
           androidNotificationOptions: AndroidNotificationOptions(
-            channelId: 'fluffychat_sync',
+            channelId: 'footbag_network_sync',
             channelName: l10n.loadingMessages,
             channelDescription: l10n.loadingMessages,
             onlyAlertOnce: true,
@@ -68,7 +68,7 @@ abstract class ForegroundServices {
         }
         final result = await FlutterForegroundTask.startService(
           serviceTypes: [ForegroundServiceTypes.shortService],
-          notificationTitle: 'FluffyChat',
+          notificationTitle: 'Footbag Network',
           notificationText: l10n.loadingMessages,
           notificationIcon: NotificationIcon(metaDataName: 'ic_launcher'),
         );

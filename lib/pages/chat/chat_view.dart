@@ -6,20 +6,20 @@
 import 'dart:ui' as ui;
 
 import 'package:desktop_drop/desktop_drop.dart';
-import 'package:fluffychat/config/themes.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/chat/chat.dart';
-import 'package:fluffychat/pages/chat/chat_app_bar_list_tile.dart';
-import 'package:fluffychat/pages/chat/chat_app_bar_title.dart';
-import 'package:fluffychat/pages/chat/chat_event_list.dart';
-import 'package:fluffychat/pages/chat/pinned_events.dart';
-import 'package:fluffychat/pages/chat/reply_display.dart';
-import 'package:fluffychat/utils/account_config.dart';
-import 'package:fluffychat/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
-import 'package:fluffychat/widgets/chat_settings_popup_menu.dart';
-import 'package:fluffychat/widgets/matrix.dart';
-import 'package:fluffychat/widgets/mxc_image.dart';
-import 'package:fluffychat/widgets/pulsating_widget.dart';
+import 'package:footbag_network/config/themes.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/chat/chat.dart';
+import 'package:footbag_network/pages/chat/chat_app_bar_list_tile.dart';
+import 'package:footbag_network/pages/chat/chat_app_bar_title.dart';
+import 'package:footbag_network/pages/chat/chat_event_list.dart';
+import 'package:footbag_network/pages/chat/pinned_events.dart';
+import 'package:footbag_network/pages/chat/reply_display.dart';
+import 'package:footbag_network/utils/account_config.dart';
+import 'package:footbag_network/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
+import 'package:footbag_network/widgets/chat_settings_popup_menu.dart';
+import 'package:footbag_network/widgets/matrix.dart';
+import 'package:footbag_network/widgets/mxc_image.dart';
+import 'package:footbag_network/widgets/pulsating_widget.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 

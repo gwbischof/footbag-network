@@ -5,12 +5,12 @@
 
 import 'dart:async';
 
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/chat/chat.dart';
-import 'package:fluffychat/pages/chat/chat_app_bar_list_tile.dart';
-import 'package:fluffychat/utils/matrix_sdk_extensions/matrix_locals.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_modal_action_popup.dart';
-import 'package:fluffychat/widgets/future_loading_dialog.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/chat/chat.dart';
+import 'package:footbag_network/pages/chat/chat_app_bar_list_tile.dart';
+import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_locals.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_modal_action_popup.dart';
+import 'package:footbag_network/widgets/future_loading_dialog.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 

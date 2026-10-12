@@ -6,8 +6,8 @@
 import 'dart:convert';
 
 import 'package:async/async.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
 import 'package:flutter/foundation.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:http/http.dart' as http;
 import 'package:managed_configurations/managed_configurations.dart';
 import 'package:matrix/matrix_api_lite/utils/logs.dart';
@@ -17,75 +17,86 @@ enum AppSettings<T> {
   textMessageMaxLength<int>('textMessageMaxLength', 16384),
 
   /// Max lines for unselected HTML/text bubbles; 0 = unlimited (no fade).
-  messagePreviewMaxLines<int>('chat.fluffy.message_preview_max_lines', 50),
+  messagePreviewMaxLines<int>('com.footbagnetwork.message_preview_max_lines', 50),
   audioRecordingNumChannels<int>('audioRecordingNumChannels', 1),
   audioRecordingAutoGain<bool>('audioRecordingAutoGain', true),
   audioRecordingEchoCancel<bool>('audioRecordingEchoCancel', false),
   audioRecordingNoiseSuppress<bool>('audioRecordingNoiseSuppress', true),
   audioRecordingBitRate<int>('audioRecordingBitRate', 64000),
   audioRecordingSamplingRate<int>('audioRecordingSamplingRate', 48000),
-  showNoGoogle<bool>('chat.fluffy.show_no_google', false),
-  unifiedPushRegistered<bool>('chat.fluffy.unifiedpush.registered', false),
-  unifiedPushEndpoint<String>('chat.fluffy.unifiedpush.endpoint', ''),
-  pushNotificationsGatewayUrl<String>(
-    'pushNotificationsGatewayUrl',
-    'https://push.fluffychat.im/_matrix/push/v1/notify',
-  ),
+  showNoGoogle<bool>('com.footbagnetwork.show_no_google', false),
+  unifiedPushRegistered<bool>('com.footbagnetwork.unifiedpush.registered', false),
+  unifiedPushEndpoint<String>('com.footbagnetwork.unifiedpush.endpoint', ''),
+  // No push gateway yet. FluffyChat's gateway is theirs, not ours; mobile push
+  // needs our own (or UnifiedPush) before this does anything.
+  pushNotificationsGatewayUrl<String>('pushNotificationsGatewayUrl', ''),
   pushNotificationsPusherFormat<String>(
     'pushNotificationsPusherFormat',
     'event_id_only',
   ),
-  renderHtml<bool>('chat.fluffy.renderHtml', true),
-  fontSizeFactor<double>('chat.fluffy.font_size_factor', 1.0),
-  hideRedactedEvents<bool>('chat.fluffy.hideRedactedEvents', false),
-  hideUnknownEvents<bool>('chat.fluffy.hideUnknownEvents', true),
-  autoplayImages<bool>('chat.fluffy.autoplay_images', true),
-  sendTypingNotifications<bool>('chat.fluffy.send_typing_notifications', true),
-  sendPublicReadReceipts<bool>('chat.fluffy.send_public_read_receipts', true),
-  swipeRightToLeftToReply<bool>('chat.fluffy.swipeRightToLeftToReply', true),
-  sendOnEnter<bool>('chat.fluffy.send_on_enter', false),
-  displayNavigationRail<bool>('chat.fluffy.display_navigation_rail', false),
-  shareKeysWith<String>('chat.fluffy.share_keys_with_2', 'all'),
+  renderHtml<bool>('com.footbagnetwork.renderHtml', true),
+  fontSizeFactor<double>('com.footbagnetwork.font_size_factor', 1.0),
+  hideRedactedEvents<bool>('com.footbagnetwork.hideRedactedEvents', false),
+  hideUnknownEvents<bool>('com.footbagnetwork.hideUnknownEvents', true),
+  autoplayImages<bool>('com.footbagnetwork.autoplay_images', true),
+  sendTypingNotifications<bool>('com.footbagnetwork.send_typing_notifications', true),
+  sendPublicReadReceipts<bool>('com.footbagnetwork.send_public_read_receipts', true),
+  swipeRightToLeftToReply<bool>('com.footbagnetwork.swipeRightToLeftToReply', true),
+  sendOnEnter<bool>('com.footbagnetwork.send_on_enter', false),
+  displayNavigationRail<bool>('com.footbagnetwork.display_navigation_rail', false),
+  shareKeysWith<String>('com.footbagnetwork.share_keys_with_2', 'all'),
   noEncryptionWarningShown<bool>(
-    'chat.fluffy.no_encryption_warning_shown',
+    'com.footbagnetwork.no_encryption_warning_shown',
     false,
   ),
-  displayChatDetailsColumn('chat.fluffy.display_chat_details_column', false),
+  displayChatDetailsColumn('com.footbagnetwork.display_chat_details_column', false),
   // AppConfig-mirrored settings
-  applicationName<String>('chat.fluffy.application_name', 'FluffyChat'),
-  defaultHomeserver<String>('chat.fluffy.default_homeserver', 'matrix.org'),
+  applicationName<String>(
+    'com.footbagnetwork.application_name',
+    'Footbag Network',
+  ),
+  defaultHomeserver<String>(
+    'com.footbagnetwork.default_homeserver',
+    'chat.korroni.com',
+  ),
   // colorSchemeSeed stored as ARGB int
-  colorSchemeSeedInt<int>('chat.fluffy.color_scheme_seed', 0xFF5625BA),
+  colorSchemeSeedInt<int>('com.footbagnetwork.color_scheme_seed', 0xFF2E8B2E),
   emojiSuggestionLocale<String>('emoji_suggestion_locale', ''),
-  enableSoftLogout<bool>('chat.fluffy.enable_soft_logout', true),
-  enableMatrixNativeOIDC<bool>('chat.fluffy.enable_matrix_native_oidc', true),
-  presetHomeserver<String>('chat.fluffy.preset_homeserver', ''),
-  welcomeText<String>('chat.fluffy.welcome_text', ''),
-  website<String>('chat.fluffy.website_url', 'https://fluffychat.im'),
+  enableSoftLogout<bool>('com.footbagnetwork.enable_soft_logout', true),
+  enableMatrixNativeOIDC<bool>('com.footbagnetwork.enable_matrix_native_oidc', true),
+  presetHomeserver<String>('com.footbagnetwork.preset_homeserver', ''),
+  welcomeText<String>('com.footbagnetwork.welcome_text', ''),
+  website<String>(
+    'com.footbagnetwork.website_url',
+    'https://newyorkfootbag.com',
+  ),
   logoUrl<String>(
-    'chat.fluffy.logo_url',
-    'https://fluffychat.im/assets/favicon.png',
+    'com.footbagnetwork.logo_url',
+    'https://newyorkfootbag.com/footbag_logo2.png',
   ),
   privacyPolicy<String>(
-    'chat.fluffy.privacy_policy_url',
-    'https://fluffychat.im/privacy',
+    'com.footbagnetwork.privacy_policy_url',
+    'https://newyorkfootbag.com/privacy',
   ),
-  tos<String>('chat.fluffy.tos_url', 'https://fluffychat.im/tos'),
-  sendTimelineEventTimeout<int>('chat.fluffy.send_timeline_event_timeout', 15),
-  webNotificationSound<bool>('chat.fluffy.web_notification_sound', true),
-  chatFilter<String>('chat.fluffy.chat_filter', 'allChats'),
-  hideRoomsInSpaces<bool>('chat.fluffy.hideRoomsInSpaces', false),
-  showThumbnailsInTimeline<bool>('chat.fluffy.showThumbnailsInTimeline', true),
-  doubleTapToReact<bool>('chat.fluffy.double_tap_to_react', false),
-  doubleTapReaction<String>('chat.fluffy.double_tap_reaction', '❤️'),
-  benchmarksInLogs<bool>('chat.fluffy.benchmarks_in_logs', false),
-  autoSendErrorReports<bool?>('chat.fluffy.auto_send_eror_reports', null),
-  knownErrorHashes<List<String>>('chat.fluffy.known_crash_hashes', []),
-  checkForUpdates<bool>('chat.fluffy.check_for_updates', true),
-  lastUpdateCheckDate<String>('chat.fluffy.last_update_check_date', ''),
+  tos<String>(
+    'com.footbagnetwork.tos_url',
+    'https://newyorkfootbag.com/terms',
+  ),
+  sendTimelineEventTimeout<int>('com.footbagnetwork.send_timeline_event_timeout', 15),
+  webNotificationSound<bool>('com.footbagnetwork.web_notification_sound', true),
+  chatFilter<String>('com.footbagnetwork.chat_filter', 'allChats'),
+  hideRoomsInSpaces<bool>('com.footbagnetwork.hideRoomsInSpaces', false),
+  showThumbnailsInTimeline<bool>('com.footbagnetwork.showThumbnailsInTimeline', true),
+  doubleTapToReact<bool>('com.footbagnetwork.double_tap_to_react', false),
+  doubleTapReaction<String>('com.footbagnetwork.double_tap_reaction', '❤️'),
+  benchmarksInLogs<bool>('com.footbagnetwork.benchmarks_in_logs', false),
+  autoSendErrorReports<bool?>('com.footbagnetwork.auto_send_eror_reports', null),
+  knownErrorHashes<List<String>>('com.footbagnetwork.known_crash_hashes', []),
+  checkForUpdates<bool>('com.footbagnetwork.check_for_updates', true),
+  lastUpdateCheckDate<String>('com.footbagnetwork.last_update_check_date', ''),
   fallbackLiveKitInstance<String>(
-    'chat.fluffy.fallback_live_kit_instance',
-    'https://livekit-jwt.fluffy.chat',
+    'com.footbagnetwork.fallback_live_kit_instance',
+    '',
   );
 
   final String key;

@@ -6,12 +6,12 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:fluffychat/config/app_config.dart';
-import 'package:fluffychat/config/setting_keys.dart';
-import 'package:fluffychat/pages/sign_in/view_model/model/public_homeserver_data.dart';
-import 'package:fluffychat/pages/sign_in/view_model/sign_in_state.dart';
-import 'package:fluffychat/widgets/matrix.dart';
 import 'package:flutter/widgets.dart';
+import 'package:footbag_network/config/app_config.dart';
+import 'package:footbag_network/config/setting_keys.dart';
+import 'package:footbag_network/pages/sign_in/view_model/model/public_homeserver_data.dart';
+import 'package:footbag_network/pages/sign_in/view_model/sign_in_state.dart';
+import 'package:footbag_network/widgets/matrix.dart';
 import 'package:matrix/matrix_api_lite/utils/logs.dart';
 
 class SignInViewModel extends ValueNotifier<SignInState> {

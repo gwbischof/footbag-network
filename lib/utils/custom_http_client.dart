@@ -6,9 +6,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:fluffychat/config/isrg_x1.dart';
-import 'package:fluffychat/config/isrg_x2.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
+import 'package:footbag_network/config/isrg_x1.dart';
+import 'package:footbag_network/config/isrg_x2.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/io_client.dart';
 import 'package:http/retry.dart' as retry;

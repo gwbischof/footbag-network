@@ -8,9 +8,9 @@ import 'dart:typed_data';
 
 import 'package:async/async.dart';
 import 'package:collection/collection.dart';
-import 'package:fluffychat/config/setting_keys.dart';
-import 'package:fluffychat/utils/matrix_live_kit_calls/call_keys_event_content.dart';
-import 'package:fluffychat/utils/matrix_live_kit_calls/matrix_live_kit_call_member.dart';
+import 'package:footbag_network/config/setting_keys.dart';
+import 'package:footbag_network/utils/matrix_live_kit_calls/call_keys_event_content.dart';
+import 'package:footbag_network/utils/matrix_live_kit_calls/matrix_live_kit_call_member.dart';
 import 'package:matrix/matrix.dart' hide Result;
 
 extension MatrixRtcClientExtension on Client {

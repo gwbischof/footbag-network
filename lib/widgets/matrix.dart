@@ -7,18 +7,18 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/utils/client_manager.dart';
-import 'package:fluffychat/utils/init_with_restore.dart';
-import 'package:fluffychat/utils/matrix_sdk_extensions/matrix_file_extension.dart';
-import 'package:fluffychat/utils/notification_background_handler.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
-import 'package:fluffychat/utils/uia_request_manager.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
-import 'package:fluffychat/widgets/fluffy_chat_app.dart';
-import 'package:fluffychat/widgets/future_loading_dialog.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/utils/client_manager.dart';
+import 'package:footbag_network/utils/init_with_restore.dart';
+import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_file_extension.dart';
+import 'package:footbag_network/utils/notification_background_handler.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
+import 'package:footbag_network/utils/uia_request_manager.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
+import 'package:footbag_network/widgets/fluffy_chat_app.dart';
+import 'package:footbag_network/widgets/future_loading_dialog.dart';
 import 'package:intl/intl.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:material_ui/material_ui.dart';
@@ -426,7 +426,7 @@ class MatrixState extends State<Matrix> {
     final exportBytes = Uint8List.fromList(const Utf8Codec().encode(export));
 
     final exportFileName =
-        'fluffychat-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.fluffybackup';
+        'footbag-network-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.fnbackup';
 
     final file = MatrixFile(bytes: exportBytes, name: exportFileName);
     if (!context.mounted) return;

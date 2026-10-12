@@ -3,8 +3,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/widgets/lock_screen.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:footbag_network/widgets/lock_screen.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:provider/provider.dart';
@@ -76,7 +76,7 @@ class AppLock extends State<AppLockWidget> with WidgetsBindingObserver {
 
   Future<void> changeUseBiometrics(bool useBiometrics) async {
     await const FlutterSecureStorage().write(
-      key: 'chat.fluffy.use_biometrics',
+      key: 'com.footbagnetwork.use_biometrics',
       value: useBiometrics.toString(),
     );
     _useBiometrics = useBiometrics;
@@ -85,7 +85,7 @@ class AppLock extends State<AppLockWidget> with WidgetsBindingObserver {
 
   Future<void> changePincode(String? pincode) async {
     await const FlutterSecureStorage().write(
-      key: 'chat.fluffy.app_lock',
+      key: 'com.footbagnetwork.app_lock',
       value: pincode,
     );
     _pincode = pincode;

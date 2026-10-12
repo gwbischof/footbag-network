@@ -4,11 +4,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:file_picker/file_picker.dart';
-import 'package:fluffychat/utils/error_reporter.dart';
-import 'package:fluffychat/utils/localized_exception_extension.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:footbag_network/utils/error_reporter.dart';
+import 'package:footbag_network/utils/localized_exception_extension.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/encryption.dart';
@@ -284,7 +284,7 @@ class BootstrapViewModel extends ValueNotifier<BootstrapViewModelState> {
   ) async {
     final path = await FilePicker.saveFile(
       fileName:
-          'FluffyChat-Recovery-Key-${DateTime.now().toIso8601String()}.txt',
+          'Footbag-Network-Recovery-Key-${DateTime.now().toIso8601String()}.txt',
       bytes: Uint8List.fromList(value.recoveryKey!.codeUnits),
     );
     if (path == null) return;

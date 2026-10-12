@@ -6,20 +6,20 @@
 import 'dart:math';
 
 import 'package:collection/collection.dart';
-import 'package:fluffychat/config/app_config.dart';
-import 'package:fluffychat/config/themes.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/call/call_tile.dart';
-import 'package:fluffychat/pages/call/call_view_model.dart';
-import 'package:fluffychat/pages/call/start_time.dart';
-import 'package:fluffychat/pages/call/utils/get_call_tiles.dart';
-import 'package:fluffychat/utils/localized_exception_extension.dart';
-import 'package:fluffychat/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
-import 'package:fluffychat/widgets/avatar.dart';
-import 'package:fluffychat/widgets/future_loading_dialog.dart';
-import 'package:fluffychat/widgets/matrix.dart';
-import 'package:fluffychat/widgets/view_model_builder.dart';
+import 'package:footbag_network/config/app_config.dart';
+import 'package:footbag_network/config/themes.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/call/call_tile.dart';
+import 'package:footbag_network/pages/call/call_view_model.dart';
+import 'package:footbag_network/pages/call/start_time.dart';
+import 'package:footbag_network/pages/call/utils/get_call_tiles.dart';
+import 'package:footbag_network/utils/localized_exception_extension.dart';
+import 'package:footbag_network/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
+import 'package:footbag_network/widgets/avatar.dart';
+import 'package:footbag_network/widgets/future_loading_dialog.dart';
+import 'package:footbag_network/widgets/matrix.dart';
+import 'package:footbag_network/widgets/view_model_builder.dart';
 import 'package:livekit_client/livekit_client.dart';
 import 'package:material_ui/material_ui.dart';
 

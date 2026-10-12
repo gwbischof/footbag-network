@@ -1,15 +1,16 @@
 # SPDX-FileCopyrightText: 2019-Present Christian Kußowski
 # SPDX-FileCopyrightText: 2019-Present Contributors to FluffyChat
+# SPDX-FileCopyrightText: 2026-Present New York Footbag Association
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-name: fluffychat
-description: Chat with your friends.
+name: footbag_network
+description: Chat and community for footbag players.
 publish_to: none
-# On version bump please also increase:
-# 1. The build number (for F-Droid)
-# 2. The version in /snap/snapcraft.yaml
-version: 2.10.0+3568
+# On version bump please also increase the build number (for F-Droid).
+# Versioning restarts at 0.1.0 for this fork; upstream FluffyChat was at
+# 2.10.0+3568 when forked.
+version: 0.1.0+1
 
 environment:
   sdk: ">=3.11.1 <4.0.0"

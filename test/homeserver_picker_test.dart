@@ -3,8 +3,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-//import 'package:fluffychat/pages/homeserver_picker.dart';
-//import 'package:fluffychat/main.dart';
+//import 'package:footbag_network/pages/homeserver_picker.dart';
+//import 'package:footbag_network/main.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 

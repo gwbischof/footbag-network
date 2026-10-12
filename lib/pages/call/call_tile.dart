@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/config/app_config.dart';
-import 'package:fluffychat/config/themes.dart';
-import 'package:fluffychat/widgets/avatar.dart';
+import 'package:footbag_network/config/app_config.dart';
+import 'package:footbag_network/config/themes.dart';
+import 'package:footbag_network/widgets/avatar.dart';
 import 'package:livekit_client/livekit_client.dart' as lk;
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';

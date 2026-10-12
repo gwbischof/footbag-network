@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/config/app_config.dart';
-import 'package:fluffychat/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
-import 'package:fluffychat/widgets/pulsating_widget.dart';
+import 'package:footbag_network/config/app_config.dart';
+import 'package:footbag_network/utils/matrix_live_kit_calls/matrix_live_kit_call.dart';
+import 'package:footbag_network/widgets/pulsating_widget.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 

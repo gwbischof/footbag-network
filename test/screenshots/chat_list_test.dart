@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/config/setting_keys.dart';
-import 'package:fluffychat/widgets/fluffy_chat_app.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:footbag_network/config/setting_keys.dart';
+import 'package:footbag_network/widgets/fluffy_chat_app.dart';
 import 'package:golden_screenshot/golden_screenshot.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';

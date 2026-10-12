@@ -6,9 +6,9 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/utils/other_party_can_receive.dart';
 import 'package:flutter/services.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/utils/other_party_can_receive.dart';
 import 'package:http/http.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/encryption.dart';

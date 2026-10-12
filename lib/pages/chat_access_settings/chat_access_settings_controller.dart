@@ -3,14 +3,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/chat_access_settings/chat_access_settings_page.dart';
-import 'package:fluffychat/utils/localized_exception_extension.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_modal_action_popup.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_text_input_dialog.dart';
-import 'package:fluffychat/widgets/future_loading_dialog.dart';
-import 'package:fluffychat/widgets/matrix.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/chat_access_settings/chat_access_settings_page.dart';
+import 'package:footbag_network/utils/localized_exception_extension.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_modal_action_popup.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_text_input_dialog.dart';
+import 'package:footbag_network/widgets/future_loading_dialog.dart';
+import 'package:footbag_network/widgets/matrix.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart' hide Visibility;
 import 'package:matrix/matrix.dart';

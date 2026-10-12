@@ -7,12 +7,12 @@ import 'dart:async';
 
 import 'package:archive/archive.dart';
 import 'package:collection/collection.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/settings_emotes/settings_emotes.dart';
-import 'package:fluffychat/utils/client_manager.dart';
-import 'package:fluffychat/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
-import 'package:fluffychat/widgets/matrix.dart';
 import 'package:flutter/services.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/settings_emotes/settings_emotes.dart';
+import 'package:footbag_network/utils/client_manager.dart';
+import 'package:footbag_network/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
+import 'package:footbag_network/widgets/matrix.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 

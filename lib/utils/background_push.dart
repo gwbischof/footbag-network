@@ -11,13 +11,13 @@ import 'dart:io';
 import 'dart:isolate';
 import 'dart:ui';
 
-//<GOOGLE_SERVICES>import 'package:fcm_shared_isolate/fcm_shared_isolate.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/main.dart';
-import 'package:fluffychat/utils/notification_background_handler.dart';
-import 'package:fluffychat/utils/push_helper.dart';
-import 'package:fluffychat/widgets/fluffy_chat_app.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+//<GOOGLE_SERVICES>import 'package:fcm_shared_isolate/fcm_shared_isolate.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/main.dart';
+import 'package:footbag_network/utils/notification_background_handler.dart';
+import 'package:footbag_network/utils/push_helper.dart';
+import 'package:footbag_network/widgets/fluffy_chat_app.dart';
 import 'package:http/http.dart' as http;
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
@@ -214,13 +214,7 @@ class BackgroundPush {
 
     if (!client.isLogged()) return;
 
-    final legacyPushers = pushers.where(
-      (pusher) =>
-          pusher.appId == thisAppId || // To migrate older app-id format:
-          ((pusher.appId == 'chat.fluffy.fluffychat.data_message' ||
-                  pusher.appId == 'chat.fluffy.fluffychat') &&
-              pusher.pushkey == token),
-    );
+    final legacyPushers = pushers.where((pusher) => pusher.appId == thisAppId);
     for (final pusher in legacyPushers) {
       try {
         await client.deletePusher(pusher);

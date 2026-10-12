@@ -6,13 +6,13 @@
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:fluffychat/config/setting_keys.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/utils/client_manager.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:footbag_network/config/setting_keys.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/utils/client_manager.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:matrix/matrix.dart';
 
 const _passwordStorageKey = 'database_password';

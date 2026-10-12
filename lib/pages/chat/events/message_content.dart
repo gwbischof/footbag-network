@@ -5,11 +5,11 @@
 
 import 'dart:math';
 
-import 'package:fluffychat/config/setting_keys.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/chat/events/poll.dart';
-import 'package:fluffychat/pages/chat/events/video_player.dart';
-import 'package:fluffychat/pages/image_viewer/image_viewer.dart';
+import 'package:footbag_network/config/setting_keys.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/chat/events/poll.dart';
+import 'package:footbag_network/pages/chat/events/video_player.dart';
+import 'package:footbag_network/pages/image_viewer/image_viewer.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 

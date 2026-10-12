@@ -3,10 +3,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/bootstrap/view_model/bootstrap_view_model.dart';
-import 'package:fluffychat/utils/fluffy_share.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/bootstrap/view_model/bootstrap_view_model.dart';
+import 'package:footbag_network/utils/fluffy_share.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:material_ui/material_ui.dart';
 
 class StoreRecoveryKeyView extends StatelessWidget {

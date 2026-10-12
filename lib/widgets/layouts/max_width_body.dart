@@ -3,8 +3,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/config/app_config.dart';
-import 'package:fluffychat/config/themes.dart';
+import 'package:footbag_network/config/app_config.dart';
+import 'package:footbag_network/config/themes.dart';
 import 'package:material_ui/material_ui.dart';
 
 class MaxWidthBody extends StatelessWidget {

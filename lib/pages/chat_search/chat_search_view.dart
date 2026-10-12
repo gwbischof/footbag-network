@@ -3,14 +3,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/config/themes.dart';
-import 'package:fluffychat/l10n/l10n.dart';
-import 'package:fluffychat/pages/chat_search/chat_search_files_tab.dart';
-import 'package:fluffychat/pages/chat_search/chat_search_images_tab.dart';
-import 'package:fluffychat/pages/chat_search/chat_search_message_tab.dart';
-import 'package:fluffychat/pages/chat_search/chat_search_page.dart';
-import 'package:fluffychat/utils/matrix_sdk_extensions/matrix_locals.dart';
-import 'package:fluffychat/widgets/layouts/max_width_body.dart';
+import 'package:footbag_network/config/themes.dart';
+import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/pages/chat_search/chat_search_files_tab.dart';
+import 'package:footbag_network/pages/chat_search/chat_search_images_tab.dart';
+import 'package:footbag_network/pages/chat_search/chat_search_message_tab.dart';
+import 'package:footbag_network/pages/chat_search/chat_search_page.dart';
+import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_locals.dart';
+import 'package:footbag_network/widgets/layouts/max_width_body.dart';
 import 'package:material_ui/material_ui.dart';
 
 class ChatSearchView extends StatelessWidget {

@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:fluffychat/config/app_config.dart';
-import 'package:fluffychat/utils/platform_infos.dart';
 import 'package:flutter/foundation.dart';
+import 'package:footbag_network/config/app_config.dart';
+import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:universal_html/html.dart' as html;
 
 (Uri redirectUrl, String urlScheme) calcRedirectUrl({
