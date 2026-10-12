@@ -23,6 +23,10 @@ import sys
 
 HOMESERVER = "https://chat.korroni.com"
 
+# Self-hosted Plausible. It needs script-src to load the script and
+# connect-src to POST events; without both the analytics silently do nothing.
+ANALYTICS = "https://stats.korroni.com"
+
 # Everything is same-origin except the homeserver: media and avatars are
 # fetched from it, and it is the only host the app may talk to. connect-src is
 # the directive that matters here -- the access token and E2EE keys live in
@@ -44,7 +48,7 @@ HOMESERVER = "https://chat.korroni.com"
 # blob: workers and inline styles are likewise Flutter requirements.
 def policy(script_hashes: list[str]) -> str:
     sources = " ".join(
-        ["'self'", "'wasm-unsafe-eval'", "'unsafe-eval'", *script_hashes]
+        ["'self'", "'wasm-unsafe-eval'", "'unsafe-eval'", ANALYTICS, *script_hashes]
     )
     return "; ".join(
         [
@@ -55,7 +59,7 @@ def policy(script_hashes: list[str]) -> str:
             "font-src 'self' data:",
             f"img-src 'self' data: blob: {HOMESERVER}",
             f"media-src 'self' data: blob: {HOMESERVER}",
-            f"connect-src 'self' {HOMESERVER} wss://chat.korroni.com",
+            f"connect-src 'self' {HOMESERVER} wss://chat.korroni.com {ANALYTICS}",
             "base-uri 'self'",
             "form-action 'self'",
             "object-src 'none'",
