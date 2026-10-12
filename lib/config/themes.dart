@@ -48,7 +48,7 @@ abstract class AppThemes {
     final colorScheme = ColorScheme.fromSeed(
       brightness: brightness,
       seedColor: seed ?? Color(AppSettings.colorSchemeSeedInt.value),
-      dynamicSchemeVariant: DynamicSchemeVariant.rainbow,
+      dynamicSchemeVariant: DynamicSchemeVariant.tonalSpot,
     );
     final isColumnMode = AppThemes.isColumnMode(context);
     final dividerColor = brightness == Brightness.dark

@@ -37,7 +37,9 @@ class ThemeController extends State<ThemeBuilder> {
   ThemeMode? _themeMode;
   Color? _primaryColor;
 
-  ThemeMode get themeMode => _themeMode ?? ThemeMode.system;
+  /// Dark by default, matching newyorkfootbag.com. Users can still switch in
+  /// settings; this only sets the starting point.
+  ThemeMode get themeMode => _themeMode ?? ThemeMode.dark;
 
   Color? get primaryColor => _primaryColor;
 
