@@ -1,138 +1,128 @@
 <!--
 SPDX-FileCopyrightText: 2019-Present Christian Kußowski
 SPDX-FileCopyrightText: 2019-Present Contributors to FluffyChat
+SPDX-FileCopyrightText: 2026-Present New York Footbag Association
 
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
-[FluffyChat](https://fluffy.chat) is an open source, nonprofit and cute [[matrix](https://matrix.org)] client written in [Flutter](https://flutter.dev). The goal of the app is to create an easy to use instant messenger which is open source and accessible for everyone.
+# Footbag Network
 
-### Links:
+A chat and community app for footbag players, built on [Matrix](https://matrix.org).
 
-- 🌐 [[Weblate] Translate FluffyChat into your language](https://hosted.weblate.org/projects/fluffychat/)
-- 🌍 [[m] Join the community](https://matrix.to/#/#fluffy-space:matrix.org)
-- 📰 [[Mastodon] Get updates on social media](https://troet.cafe/@krille)
-- 💝 [[Liberapay] Support FluffyChat development](https://de.liberapay.com/KrilleChritzelius)
+Footbag Network connects the global footbag community — freestyle, net, and casual
+players — in one place. The chat isn't a separate silo: it's the same Matrix network
+the community already uses, so the app and the web community are one.
 
-<a href='https://ko-fi.com/krille' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+Part of the footbag ecosystem alongside [New York Footbag](https://newyorkfootbag.com)
+and the [Modified forum](https://modified.korroni.com).
 
-### Screenshots:
+## Status
 
-<img src="https://github.com/krille-chan/fluffychat-website/blob/main/public/img/screenshot_mobile.png?raw=true" height="300">
-<img src="https://github.com/krille-chan/fluffychat-website/blob/main/public/img/screenshot_desktop.png?raw=true" height="300">
+Early development. Currently a rebranded Matrix client; footbag-specific features
+(finding players near you, progress tracking, club profiles) are in progress.
 
-# Features
+## Attribution
 
-- 📩 Send all kinds of messages, images and files
-- 🤙 Video calls with Matrix RTC
+Footbag Network is a **fork of [FluffyChat](https://github.com/krille-chan/fluffychat)**
+by Christian Kußowski and contributors — an excellent open-source Matrix client. We
+forked it rather than reinventing a Matrix client from scratch. Please consider
+[supporting FluffyChat's development](https://de.liberapay.com/KrilleChritzelius).
+
+See [NOTICE](NOTICE) for full attribution and a summary of modifications.
+
+## License
+
+AGPL-3.0-or-later. See [LICENSE](LICENSE).
+
+The source for this app, including all modifications, is at
+https://github.com/gwbischof/footbag-network.
+
+**Trademarks.** The names "Footbag Network" and "NYFA", and their logos, are
+trademarks of the New York Footbag Association. The AGPL grants you rights to the
+code, not to the branding — if you distribute a derivative, use your own name and
+logo.
+
+## Features
+
+- 📩 Messages, images, and files
 - 🎙️ Voice messages
 - 📍 Location sharing
 - 🔔 Push notifications
-- 💬 Unlimited private and public group chats
-- 📣 Public channels with thousands of participants
-- 🛠️ Feature rich group moderation including all matrix features
-- 🔍 Discover and join public groups
-- 🎨 Material You design
-- 😄 Custom emotes and stickers
+- 💬 Private and public group chats
 - 🌌 Spaces
-- 🔐 End to end encryption
-- 🔒 Encrypted chat backup
-- 😀 Emoji verification & cross signing
-... and much more.
+- 🔐 End-to-end encryption with encrypted chat backup
+- 😀 Emoji verification & cross-signing
+- 🎨 Material You design
 
+## How to build
 
-# Installation
+Requires [Flutter](https://flutter.dev). Some dependencies (the Vodozemac crypto
+library) are Rust-based but ship prebuilt — you only need
+[Rust](https://www.rust-lang.org/tools/install) if you're rebuilding those from source.
 
-Please visit the website for installation instructions:
-
-- https://fluffy.chat
-
-# Configuration and Mobile Device Management (MDM)
-
-FluffyChat supports configuration via MDM on Android&iOS (since v2.10.0) and via a config.json file on web. You can see the populated configuration for MDM on Android in this file under `/android/app/src/main/res/xml/app_restrictions.xml`.
-An example configuration can be found in the `config.sample.json` file.
-
-# How to build
-
-1. To build FluffyChat you need [Flutter](https://flutter.dev) and [Rust](https://www.rust-lang.org/tools/install)
-
-2. Clone the repo:
+```bash
+git clone https://github.com/gwbischof/footbag-network.git
+cd footbag-network
+flutter pub get
 ```
-git clone https://github.com/krille-chan/fluffychat.git
-cd fluffychat
-```
-3. Choose your target platform below and enable support for it.
-3.1 If you want, enable Googles Firebase Cloud Messaging:
-
-`./scripts/add-firebase-messaging.sh`
-
-4. Debug with: `flutter run`
-
-### Android
-
-* Build with: `flutter build apk`
-
-### iOS / iPadOS
-
-* Have a Mac with Xcode installed, and set up for Xcode-managed app signing
-* If you want automatic app installation to connected devices, make sure you have Apple Configurator installed, with the Automation Tools (`cfgutil`) enabled
-* Set a few environment variables
-    * FLUFFYCHAT_NEW_TEAM: the Apple Developer team that your certificates should live under
-    * FLUFFYCHAT_NEW_GROUP: the group you want App IDs and such to live under (ie: com.example.fluffychat)
-    * FLUFFYCHAT_INSTALL_IPA: set to `1` if you want the IPA to be deployed to connected devices after building, otherwise unset
-* Run `./scripts/build-ios.sh`
 
 ### Web
 
-* Build with:
 ```bash
-./scripts/prepare-web.sh # To install Vodozemac
+./scripts/prepare-web.sh   # installs Vodozemac (required)
 flutter build web --release
 ```
 
-* Optionally configure by serving a `config.json` at the same path as fluffychat.
-  An example can be found at `config.sample.json`. All values there are optional.
-  **Please only the values, you really need**. If you e.g. only want
-  to change the default homeserver, then only modify the `defaultHomeserver` key.
+Run locally with `flutter run -d chrome`.
+
+Optionally configure by serving a `config.json` alongside the app — see
+`config.sample.json`. Only include the keys you actually want to override.
+
+### Android
+
+```bash
+flutter build apk
+```
+
+### iOS / iPadOS
+
+Requires a Mac with Xcode set up for app signing. See `scripts/build-ios.sh`.
 
 ### Desktop (Linux, Windows, macOS)
 
-* Enable Desktop support in Flutter: https://flutter.dev/desktop
+[Enable desktop support](https://flutter.dev/desktop) in Flutter, then:
 
-#### Install custom dependencies (Linux)
+```bash
+flutter build linux --release    # or windows / macos
+```
+
+On Linux you'll also need:
 
 ```bash
 sudo apt install libjsoncpp1 libsecret-1-dev libsecret-1-0 librhash0 libwebkit2gtk-4.0-dev lld
 ```
 
-* Build with one of these:
+## Configuration and Mobile Device Management (MDM)
+
+Configurable via MDM on Android and iOS, and via a `config.json` file on web. The
+Android MDM schema is at `android/app/src/main/res/xml/app_restrictions.xml`.
+
+## Integration tests
+
+Requires Docker. Run the preparation script before each test run:
+
 ```bash
-flutter build linux --release
-flutter build windows --release
-flutter build macos --release
-```
-
-## How to run integration tests
-
-You need to have docker installed locally! Run the preparation script before every test run:
-
-```sh
 ./scripts/prepare_integration_test.sh
-```
-
-Then run all tests with:
-
-```sh
 flutter test integration_test/mobile_test.dart
 ```
 
+## Special thanks
 
-# Special thanks
-
-* <a href="https://github.com/fabiyamada">Fabiyamada</a> is a graphics designer and has made the fluffychat logo and the banner. Big thanks for her great designs.
-
-* Also thanks to all translators and testers! With your help, fluffychat is now available in more than 12 languages.
-
-* The Matrix Foundation for making and maintaining the [emoji translations](https://github.com/matrix-org/matrix-spec/blob/main/data-definitions/sas-emoji.json) used for emoji verification, licensed Apache 2.0
-
-* Special thanks to MTRNord, Sorunome and Advocatux.
+- **FluffyChat** and its contributors, for the client this is built on.
+- [Fabiyamada](https://github.com/fabiyamada), who designed FluffyChat's original
+  logo and banner.
+- FluffyChat's translators and testers, whose work this fork inherits.
+- The Matrix Foundation, for the
+  [emoji translations](https://github.com/matrix-org/matrix-spec/blob/main/data-definitions/sas-emoji.json)
+  used in emoji verification (Apache 2.0).
