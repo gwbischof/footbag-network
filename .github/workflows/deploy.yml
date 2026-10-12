@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
 
       # A cold build compiles the Vodozemac WASM from Rust before it even
       # reaches the Flutter web bundle, so it is slow; the GHA cache is what
@@ -50,11 +50,18 @@ jobs:
     needs: build-and-push
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+
     steps:
+      # persist-credentials: false keeps the kube write key out of the job's
+      # git config for the rest of the run; the push below supplies it for
+      # exactly one command instead.
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
           repository: gwbischof/kube
           ssh-key: ${{ secrets.KUBE_DEPLOY_KEY }}
+          persist-credentials: false
 
       - name: Update image tag
         run: |
@@ -62,9 +69,17 @@ jobs:
           sed -i "s|newTag: .*# ${{ env.IMAGE_NAME }}$|newTag: ${{ github.sha }} # ${{ env.IMAGE_NAME }}|" kustomization.yaml
 
       - name: Commit and push
+        env:
+          KUBE_DEPLOY_KEY: ${{ secrets.KUBE_DEPLOY_KEY }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add .
-          git diff --cached --quiet || git commit -m "deploy: ${{ env.IMAGE_NAME }}:${{ github.sha }}"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "deploy: ${{ env.IMAGE_NAME }}:${{ github.sha }}"
+          key=$(mktemp)
+          printf '%s\n' "$KUBE_DEPLOY_KEY" > "$key"
+          chmod 600 "$key"
+          trap 'rm -f "$key"' EXIT
+          GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new" \
+            git push git@github.com:gwbischof/kube.git HEAD:main
