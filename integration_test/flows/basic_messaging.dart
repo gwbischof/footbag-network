@@ -11,7 +11,7 @@ import 'auth_flows.dart';
 import 'chat_flows.dart';
 
 Future<void> basicMessaging(WidgetTester widgetTester) => widgetTester
-    .startFluffyChatTest()
+    .startFootbagNetworkTest()
     .then((tester) => tester._basicMessaging());
 
 extension on FootbagNetworkTester {

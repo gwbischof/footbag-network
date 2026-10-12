@@ -1,6 +1,6 @@
 {
     "repeatPassword": "Salasana uudelleen",
-    "about": "Tietoa FluffyChatista",
+    "about": "Tietoa Footbag Network",
     "@about": {
         "type": "String",
         "placeholders": {}
@@ -638,7 +638,7 @@
         "type": "String",
         "placeholders": {}
     },
-    "inviteText": "{username} kutsui sinut FluffyChattiin.\n1. Viereaile sivulla: https://fluffychat.im ja asenna sovellus\n2. Rekisteröidy tai kirjaudu sisään\n3. Avaa kutsulinkki:\n{link}",
+    "inviteText": "{username} kutsui sinut Footbag Network.\n1. Viereaile sivulla: https://footbag-network.korroni.com ja asenna sovellus\n2. Rekisteröidy tai kirjaudu sisään\n3. Avaa kutsulinkki:\n{link}",
     "@inviteText": {
         "type": "String",
         "placeholders": {
@@ -776,8 +776,8 @@
         "type": "String",
         "placeholders": {}
     },
-    "newMessageInFluffyChat": "💬 Uusi viesti FluffyChätissä",
-    "@newMessageInFluffyChat": {
+    "newMessageInApp": "💬 Uusi viesti Footbag Network",
+    "@newMessageInApp": {
         "type": "String",
         "placeholders": {}
     },

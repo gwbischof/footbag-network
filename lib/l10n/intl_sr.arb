@@ -766,7 +766,7 @@
         "type": "String",
         "placeholders": {}
     },
-    "inviteText": "{username} вас позива у FluffyChat. \n1. Инсталирајте FluffyChat: https://fluffychat.im \n2. Региструјте се или пријавите \n3. Отворите везу позивнице: {link}",
+    "inviteText": "{username} вас позива у Footbag Network. \n1. Инсталирајте Footbag Network: https://footbag-network.korroni.com \n2. Региструјте се или пријавите \n3. Отворите везу позивнице: {link}",
     "@inviteText": {
         "type": "String",
         "placeholders": {
@@ -913,8 +913,8 @@
         "type": "String",
         "placeholders": {}
     },
-    "newMessageInFluffyChat": "Нова порука — FluffyChat",
-    "@newMessageInFluffyChat": {
+    "newMessageInApp": "Нова порука — Footbag Network",
+    "@newMessageInApp": {
         "type": "String",
         "placeholders": {}
     },
@@ -948,7 +948,7 @@
         "type": "String",
         "placeholders": {}
     },
-    "noGoogleServicesWarning": "Чини се да немате Гугл услуге на телефону. То је добра одлука за вашу приватност! Да би се протурале нотификације у FluffyChat, препоручујемо коришћење https://microg.org/ или https://unifiedpush.org/",
+    "noGoogleServicesWarning": "Чини се да немате Гугл услуге на телефону. То је добра одлука за вашу приватност! Да би се протурале нотификације у Footbag Network, препоручујемо коришћење https://microg.org/ или https://unifiedpush.org/",
     "@noGoogleServicesWarning": {
         "type": "String",
         "placeholders": {}

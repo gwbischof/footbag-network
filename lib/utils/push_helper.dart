@@ -65,7 +65,7 @@ Future<void> pushHelper(
     if (notification.roomId != null) {
       await flutterLocalNotificationsPlugin.show(
         id: notification.notificationId,
-        title: l10n.newMessageInFluffyChat,
+        title: l10n.newMessageInApp,
         body: l10n.openAppToReadMessages,
         notificationDetails: NotificationDetails(
           iOS: DarwinNotificationDetails(
@@ -199,7 +199,7 @@ Future<void> _tryPushHelper(
 
   // Calculate the body
   final body = event.type == EventTypes.Encrypted
-      ? l10n.newMessageInFluffyChat
+      ? l10n.newMessageInApp
       : await event.calcLocalizedBody(
           matrixLocals,
           plaintextBody: true,

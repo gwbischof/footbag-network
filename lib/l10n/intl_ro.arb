@@ -714,7 +714,7 @@
             }
         }
     },
-    "inviteText": "{username} v-a invitat la FluffyChat.\n1. Instalați FluffyChat: https://fluffychat.im\n2. Înregistrați-vă sau conectați-vă\n3. Deschideți invitația: {link}",
+    "inviteText": "{username} v-a invitat la Footbag Network.\n1. Instalați Footbag Network: https://footbag-network.korroni.com\n2. Înregistrați-vă sau conectați-vă\n3. Deschideți invitația: {link}",
     "@inviteText": {
         "type": "String",
         "placeholders": {
@@ -1075,7 +1075,7 @@
         "type": "String",
         "placeholders": {}
     },
-    "noGoogleServicesWarning": "Se pare că nu aveți serviciile google pe dispozitivul vostru. Această decizie este bună pentru confidențialitatea voastră! Să primiți notificari push în FluffyChat vă recomandăm https://microg.org/ sau https://unifiedpush.org/.",
+    "noGoogleServicesWarning": "Se pare că nu aveți serviciile google pe dispozitivul vostru. Această decizie este bună pentru confidențialitatea voastră! Să primiți notificari push în Footbag Network vă recomandăm https://microg.org/ sau https://unifiedpush.org/.",
     "@noGoogleServicesWarning": {
         "type": "String",
         "placeholders": {}
@@ -1259,8 +1259,8 @@
         "type": "String",
         "placeholders": {}
     },
-    "newMessageInFluffyChat": "💬 Mesaj nou în FluffyChat",
-    "@newMessageInFluffyChat": {
+    "newMessageInApp": "💬 Mesaj nou în Footbag Network",
+    "@newMessageInApp": {
         "type": "String",
         "placeholders": {}
     },

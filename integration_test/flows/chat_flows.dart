@@ -12,7 +12,7 @@ import '../utils/footbag_network_tester.dart';
 import 'auth_flows.dart';
 
 Future<void> archiveChats(WidgetTester widgetTester) =>
-    widgetTester.startFluffyChatTest().then((tester) => tester._archiveChats());
+    widgetTester.startFootbagNetworkTest().then((tester) => tester._archiveChats());
 
 extension ChatFlows on FootbagNetworkTester {
   static const String groupChatName = 'Test Group 01';

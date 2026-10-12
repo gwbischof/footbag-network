@@ -1,31 +1,23 @@
-<b>Messaging how it should be</b>
+<b>For the footbag community</b>
 
-Whether for your friends, your company or local community, FluffyChat supports a variety of features to cover all your daily needs.
+Footbag Network connects footbag players worldwide — freestyle, net, and casual. Find people to play with, keep up with what's happening in the scene, and talk shop about shoes, bags, and tricks.
+
+<b>One community, not another silo</b>
+
+The chat here is the same network the footbag community already uses, so you are not starting over in an empty app. Footbag Network is built on the open Matrix protocol and works with any other Matrix client, including Element, Cinny, and NeoChat.
 
 <b>Easy to use</b>
 
-Simply install, log in and start chatting. The intuitive user interface makes secure communication as easy as possible.
+Install, sign in, and start talking. No invite codes, no algorithm deciding what you see.
 
 <b>Secure</b>
 
-With olm/megolm end-to-end encryption, encrypted message backups and an automated key trust system, FluffyChat is among the most secure messengers available.
+End-to-end encryption with encrypted message backups and automated key verification, so your private conversations stay private.
 
-<b>Decentral</b>
+<b>Feature rich</b>
 
-Based on the open Matrix protocol we build a decentralized messaging network together, which no entity can control. Host your own chat server while remaining in contact with everyone.
+Group chats, spaces, images and files, voice messages, location sharing, custom stickers, and moderation tools for people running their own club spaces.
 
-<b>Feature rich and reliable</b>
+<b>Open source</b>
 
-From public chats with tens of thousands of participants and polls to custom stickers, spaces, rich moderation tools, and multi-device support, FluffyChat delivers a comprehensive communication suite.
-
-<b>Secure video calls</b>
-
-Direct calls and video conferences, fully secured with Matrix RTC-compatible encryption.
-
-<b>Not another walled garden</b>
-
-We do not build another walled garden! FluffyChat is fully compatible with any other Matrix client like Element, Nheko, Cinny or NeoChat. Learn more at matrix.org.
-
-<b>Made by volunteers</b>
-
-FluffyChat is a non-profit project based on open standards and driven entirely by volunteers. Infrastructure is funded by donations, and participation is open to everyone.
+Footbag Network is free and open source under the AGPL. It is a fork of FluffyChat, an excellent Matrix client built by volunteers — our thanks to them. Source code and issue tracker: https://github.com/gwbischof/footbag-network

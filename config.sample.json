@@ -1,9 +1,9 @@
 {
-  "applicationName": "FluffyChat",
-  "defaultHomeserver": "matrix.org",
+  "applicationName": "Footbag Network",
+  "defaultHomeserver": "chat.korroni.com",
   "presetHomeserver": "",
   "welcomeText": "",
-  "privacyUrl": "https://github.com/krille-chan/fluffychat/blob/main/PRIVACY.md",
+  "privacyUrl": "https://newyorkfootbag.com/privacy",
   "audioRecordingNumChannels": 1,
   "audioRecordingAutoGain": true,
   "audioRecordingEchoCancel": false,
@@ -27,6 +27,6 @@
   "shareKeysWith": "all",
   "noEncryptionWarningShown": false,
   "displayChatDetailsColumn": false,
-  "colorSchemeSeedInt": 4283835834,
+  "colorSchemeSeedInt": 4281240366,
   "enableSoftLogout": false
 }

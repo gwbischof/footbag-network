@@ -23,7 +23,7 @@ class _FakeNotifications extends FlutterLocalNotificationsPlatform {}
 Future<Client> prepareTestClient({
   bool loggedIn = false,
   Uri? homeserver,
-  String id = 'FluffyChat Widget Test',
+  String id = 'Footbag Network Widget Test',
 }) async {
   await setUpVodozemac();
   SharedPreferences.setMockInitialValues({});
@@ -32,7 +32,7 @@ Future<Client> prepareTestClient({
 
   homeserver ??= Uri.parse('https://fakeserver.notexisting');
   final client = Client(
-    'FluffyChat Widget Tests',
+    'Footbag Network Widget Tests',
     httpClient: FakeMatrixApi(),
     verificationMethods: {
       KeyVerificationMethod.numbers,

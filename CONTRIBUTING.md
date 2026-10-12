@@ -1,37 +1,41 @@
 <!--
 SPDX-FileCopyrightText: 2019-Present Christian Kußowski
 SPDX-FileCopyrightText: 2019-Present Contributors to FluffyChat
+SPDX-FileCopyrightText: 2026-Present New York Footbag Association
 
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
-# Contributing to FluffyChat
-Contributions are always welcome. Yet we might lack manpower to review all of them in time.
+# Contributing to Footbag Network
+Contributions are always welcome. This is a small project, so reviews may take a while.
+
+Much of the guidance below is inherited from
+[FluffyChat](https://github.com/krille-chan/fluffychat), which this project is a fork
+of, and still describes the architecture accurately.
 
 To improve the process please make sure that you read the following guidelines carefully:
 
 ## Contributing Guidelines
 
 1. Always create a Pull Request for any changes.
-2. Usage of LLMs to generate code, documentation, commit messages or PR description is strictly prohibited.
-3. Whenever possible please make sure that your Pull Request only contains **one** commit. Cases where multiple commits make sense are very rare.
-4. Do not add merge commits. Use rebases.
-5. Every Pull Request should change only one thing. For bigger changes it is often better to split them up in multiple Pull Requests.
-6. [Sign your commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
-7. Format the commit message as [Conventional Commits](https://www.conventionalcommits.org).
-8. For bigger or complex changes (more than a couple of code lines) write an issue or refer to an existing issue and ask for approval from the maintainers (@krille-chan) **before** starting to implement it. This way you reduce the risk that your Pull Request get's declined.
-9. Prefer simple and easy to maintain solutions over complexity and fancy ones.
-10. Translations in the .arb files are managed in [Weblate](https://hosted.weblate.org/projects/fluffychat/) and not here.
-11. Do not comment your code! Code comments are a sign that the code is not self-explanatory. Instead use comments to mark workarounds (always with a link to the upstream problem!) or explain **why** something is done in an unusual way.
-12. Do not fire&forget a pull request! Contributing also means taking over responsibility, reacting on comments and reviews and be able to collaborate.
-13. Do not overengineer something. Not everything needs to be abstracted, if it isn't used in more than one place. Code must fit in the current architecture.
-14. Avoid using `else` and prefer function guards, early returns and `switch`.
-15. Do not add functionality in the platform-directories. We try to not differ from the default as these creates huge conflicts on upgrading Flutter versions. We do not have our own platform channels but abstracted them in external packages. We must try to get rid of existing workarounds and not extend them! Exceptions are for edge cases like the Notification Service Extension on iOS.
-16. Keep all dependencies and external packages minimal. Make sure that new packages are well maintained and no threat to future dependency hell.
+2. Whenever possible please make sure that your Pull Request only contains **one** commit. Cases where multiple commits make sense are very rare.
+3. Do not add merge commits. Use rebases.
+4. Every Pull Request should change only one thing. For bigger changes it is often better to split them up in multiple Pull Requests.
+5. [Sign your commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+6. Format the commit message as [Conventional Commits](https://www.conventionalcommits.org).
+7. For bigger or complex changes (more than a couple of code lines) write an issue or refer to an existing issue and ask for approval from the maintainers (@gwbischof) **before** starting to implement it. This way you reduce the risk that your Pull Request get's declined.
+8. Prefer simple and easy to maintain solutions over complexity and fancy ones.
+9. Translations in the .arb files are inherited from FluffyChat's Weblate project. New or corrected translations can be submitted here directly.
+10. Do not comment your code! Code comments are a sign that the code is not self-explanatory. Instead use comments to mark workarounds (always with a link to the upstream problem!) or explain **why** something is done in an unusual way.
+11. Do not fire&forget a pull request! Contributing also means taking over responsibility, reacting on comments and reviews and be able to collaborate.
+12. Do not overengineer something. Not everything needs to be abstracted, if it isn't used in more than one place. Code must fit in the current architecture.
+13. Avoid using `else` and prefer function guards, early returns and `switch`.
+14. Do not add functionality in the platform-directories. We try to not differ from the default as these creates huge conflicts on upgrading Flutter versions. We do not have our own platform channels but abstracted them in external packages. We must try to get rid of existing workarounds and not extend them! Exceptions are for edge cases like the Notification Service Extension on iOS.
+15. Keep all dependencies and external packages minimal. Make sure that new packages are well maintained and no threat to future dependency hell.
 
 # Code Style
 
-FluffyChat tries to be as minimal as possible even in the code style. We try to keep the code clean, simple and easy to read. The source code of the app is under `/lib` with the main entry point `/lib/main.dart`.
+Footbag Network tries to be as minimal as possible even in the code style. We try to keep the code clean, simple and easy to read. The source code of the app is under `/lib` with the main entry point `/lib/main.dart`.
 
 <!-- editorconfig-checker-disable -->
 <!-- prettier-ignore-start -->

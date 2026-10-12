@@ -1141,7 +1141,7 @@
         "type": "String",
         "placeholders": {}
     },
-    "@newMessageInFluffyChat": {
+    "@newMessageInApp": {
         "type": "String",
         "placeholders": {}
     },

@@ -88,7 +88,7 @@ class ClientChooserButton extends StatelessWidget {
           children: [
             Icon(Icons.favorite, color: Colors.red),
             const SizedBox(width: 18),
-            Text(L10n.of(context).supportFluffyChat),
+            Text(L10n.of(context).supportApp),
           ],
         ),
       ),

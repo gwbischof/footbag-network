@@ -921,7 +921,7 @@
             }
         }
     },
-    "@newMessageInFluffyChat": {
+    "@newMessageInApp": {
         "type": "String",
         "placeholders": {}
     },
@@ -1322,10 +1322,6 @@
         "placeholders": {}
     },
     "@joinRoom": {
-        "type": "String",
-        "placeholders": {}
-    },
-    "@fluffychat": {
         "type": "String",
         "placeholders": {}
     },

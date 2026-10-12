@@ -11,7 +11,7 @@ import '../data/environment_constants.dart';
 import '../utils/footbag_network_tester.dart';
 
 Future<void> finalLogout(WidgetTester widgetTester) =>
-    widgetTester.startFluffyChatTest().then((tester) => tester.logout());
+    widgetTester.startFootbagNetworkTest().then((tester) => tester.logout());
 
 extension AuthFlows on FootbagNetworkTester {
   Future<void> initCryptoIdentity({String username = user1Name}) async {

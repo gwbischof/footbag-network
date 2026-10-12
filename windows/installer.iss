@@ -1,4 +1,4 @@
-﻿; Inno Setup script for the FluffyChat Windows installer.
+﻿; Inno Setup script for the Footbag Network Windows installer.
 ; Build with: scripts/package-windows.ps1
 
 #ifndef AppVersion
@@ -13,28 +13,28 @@
 ; Never change the AppId! Inno Setup uses it to detect an existing
 ; installation, so that a new installer updates it in place.
 AppId={{4914EA58-B990-4CA5-BFAA-8EAC9A24F6A5}
-AppName=FluffyChat
+AppName=Footbag Network
 AppVersion={#AppVersion}
-AppVerName=FluffyChat {#AppVersion}
-AppPublisher=Christian Kußowski
-AppPublisherURL=https://fluffychat.im
-AppSupportURL=https://github.com/krille-chan/fluffychat/issues
-AppUpdatesURL=https://github.com/krille-chan/fluffychat/releases
+AppVerName=Footbag Network {#AppVersion}
+AppPublisher=New York Footbag Association
+AppPublisherURL=https://newyorkfootbag.com
+AppSupportURL=https://github.com/gwbischof/footbag-network/issues
+AppUpdatesURL=https://github.com/gwbischof/footbag-network/releases
 VersionInfoVersion={#AppVersion}
 ; Per-user installation into %LOCALAPPDATA%\Programs, so that neither the
 ; installation nor updates require admin rights.
 PrivilegesRequired=lowest
-DefaultDirName={autopf}\FluffyChat
+DefaultDirName={autopf}\Footbag Network
 DisableProgramGroupPage=yes
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 CloseApplications=yes
 RestartApplications=yes
 SetupIconFile=runner\resources\app_icon.ico
-UninstallDisplayIcon={app}\fluffychat.exe
+UninstallDisplayIcon={app}\footbag_network.exe
 LicenseFile=..\LICENSE
 OutputDir=..\build\windows\installer
-OutputBaseFilename=fluffychat-windows-x64-setup
+OutputBaseFilename=footbag-network-windows-x64-setup
 Compression=lzma2/max
 SolidCompression=yes
 WizardStyle=modern
@@ -66,8 +66,8 @@ Type: filesandordirs; Name: "{app}\data"
 Source: "{#BuildDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
-Name: "{autoprograms}\FluffyChat"; Filename: "{app}\fluffychat.exe"
-Name: "{autodesktop}\FluffyChat"; Filename: "{app}\fluffychat.exe"; Tasks: desktopicon
+Name: "{autoprograms}\Footbag Network"; Filename: "{app}\footbag_network.exe"
+Name: "{autodesktop}\Footbag Network"; Filename: "{app}\footbag_network.exe"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\fluffychat.exe"; Description: "{cm:LaunchProgram,FluffyChat}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\footbag_network.exe"; Description: "{cm:LaunchProgram,Footbag Network}"; Flags: nowait postinstall skipifsilent

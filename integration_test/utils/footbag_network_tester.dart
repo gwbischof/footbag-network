@@ -120,7 +120,7 @@ extension on Object {
 }
 
 extension StartTest on WidgetTester {
-  Future<FootbagNetworkTester> startFluffyChatTest() async {
+  Future<FootbagNetworkTester> startFootbagNetworkTest() async {
     app.main(['integration_test']);
 
     return FootbagNetworkTester(this);

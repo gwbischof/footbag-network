@@ -1,11 +1,11 @@
 {
-    "name": "FluffyChat",
-    "short_name": "FluffyChat",
+    "name": "Footbag Network",
+    "short_name": "Footbag Network",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#FFFFFF",
-    "theme_color": "#41a2bc",
-    "description": "The cutest messenger in the Matrix network",
+    "theme_color": "#2E8B2E",
+    "description": "Chat and community for footbag players",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

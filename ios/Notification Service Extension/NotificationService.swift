@@ -26,14 +26,14 @@ class NotificationService: UNNotificationServiceExtension {
         guard let bestAttemptContent = bestAttemptContent else { return }
 
         // Uncomment to read the push message payload:
-        // os_log("[FluffyChatPushHelper] New message received: %{public}@", log: .default, type: .error, bestAttemptContent.userInfo)
-        os_log("[FluffyChatPushHelper] New message received")
+        // os_log("[FootbagNetworkPushHelper] New message received: %{public}@", log: .default, type: .error, bestAttemptContent.userInfo)
+        os_log("[FootbagNetworkPushHelper] New message received")
 
         // Check if notification contains room ID and event ID:
         guard let roomId = bestAttemptContent.userInfo["room_id"] as? String,
             let eventId = bestAttemptContent.userInfo["event_id"] as? String
         else {
-            os_log("[FluffyChatPushHelper] Room ID or Event ID is missing!")
+            os_log("[FootbagNetworkPushHelper] Room ID or Event ID is missing!")
             let emptyContent = UNMutableNotificationContent()
             contentHandler(emptyContent)
             return
@@ -82,9 +82,9 @@ class NotificationService: UNNotificationServiceExtension {
 
         // Create database path:
         guard let containerPath = FileManager.default.containerURL(
-                forSecurityApplicationGroupIdentifier: "group.im.fluffychat.app"
+                forSecurityApplicationGroupIdentifier: "group.com.footbagnetwork.app"
             ) else {
-                os_log("[FluffyChatPushHelper] Unable to get container path!")
+                os_log("[FootbagNetworkPushHelper] Unable to get container path!")
                 contentHandler(bestAttemptContent)
                 return
         }
@@ -95,7 +95,7 @@ class NotificationService: UNNotificationServiceExtension {
         do {
             database = try getDatabase(path: databasePath)
         } catch {
-            os_log("[FluffyChatPushHelper] Unable to open database: %{public}@", type: .error, String(describing: error))
+            os_log("[FootbagNetworkPushHelper] Unable to open database: %{public}@", type: .error, String(describing: error))
             bestAttemptContent.userInfo["error"] = String(describing: error)
             contentHandler(bestAttemptContent)
             return
@@ -119,7 +119,7 @@ class NotificationService: UNNotificationServiceExtension {
                         roomName
                         ?? heroes.map { hero in
                             hero.content.displayname
-                                ?? String(localized: "FluffyChat User")
+                                ?? String(localized: "Footbag Network User")
                         }.joined(separator: ", ")
                     roomAvatarUrl = roomAvatarUrl ?? heroes.first?.content.avatar_url
                 } else {
@@ -141,7 +141,7 @@ class NotificationService: UNNotificationServiceExtension {
                 let attachment = try downloadAttachment(url: roomAvatarUrl, containerPath: containerPath)
                 bestAttemptContent.attachments = [attachment]
             } catch {
-                os_log("[FluffyChatPushHelper] Unable to download avatar!")
+                os_log("[FootbagNetworkPushHelper] Unable to download avatar!")
             }
         }
 
@@ -165,7 +165,7 @@ class NotificationService: UNNotificationServiceExtension {
             kSecAttrService as String: "flutter_secure_storage_service",
             kSecAttrAccount as String: "database_password",
             kSecReturnData as String: true,
-            kSecAttrAccessGroup as String: "group.im.fluffychat.app",
+            kSecAttrAccessGroup as String: "group.com.footbagnetwork.app",
         ]
 
         var item: CFTypeRef?
@@ -272,7 +272,7 @@ class NotificationService: UNNotificationServiceExtension {
     }
     
     func downloadAttachment(url: String, containerPath: URL) throws -> UNNotificationAttachment {
-        let downloadDirectory = containerPath.appendingPathComponent("fluffychat_download_cache")
+        let downloadDirectory = containerPath.appendingPathComponent("footbag_network_download_cache")
         
         let mxcComponents = url.replacingOccurrences(of: "mxc://", with: "").split(separator: "/")
         guard mxcComponents.count == 2 else {

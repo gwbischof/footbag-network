@@ -11,7 +11,7 @@ import '../utils/footbag_network_tester.dart';
 import 'auth_flows.dart';
 
 Future<void> multiAccount(WidgetTester widgetTester) => widgetTester
-    .startFluffyChatTest()
+    .startFootbagNetworkTest()
     .then((tester) => tester._multiAccountAndNotifications());
 
 extension on FootbagNetworkTester {

@@ -15,7 +15,7 @@ import 'flows/multi_account.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  group('FluffyChat Integration Tests', () {
+  group('Footbag Network Integration Tests', () {
     testWidgets('Login and logout flow', loginAndChatBackup);
     testWidgets('Basic Messaging', basicMessaging);
     testWidgets('Multi-Account', multiAccount);

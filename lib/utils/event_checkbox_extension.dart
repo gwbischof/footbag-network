@@ -6,6 +6,10 @@
 import 'package:matrix/matrix.dart';
 
 extension EventCheckboxRoomExtension on Room {
+  /// Deliberately keeps FluffyChat's namespace: this rel_type travels over the
+  /// wire in m.relates_to, so it is shared vocabulary rather than branding.
+  /// Renaming it would silently break checkbox interop with FluffyChat clients
+  /// in the same room and gain nothing.
   static const String relationshipType = 'im.fluffychat.checkboxes';
   Future<String?> checkCheckbox(
     String eventId,

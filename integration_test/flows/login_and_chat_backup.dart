@@ -12,7 +12,7 @@ import '../utils/footbag_network_tester.dart';
 import 'auth_flows.dart';
 
 Future<void> loginAndChatBackup(WidgetTester widgetTester) => widgetTester
-    .startFluffyChatTest()
+    .startFootbagNetworkTest()
     .then((tester) => tester._loginAndChatBackup());
 
 extension on FootbagNetworkTester {

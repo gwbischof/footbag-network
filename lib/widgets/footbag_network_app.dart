@@ -52,7 +52,7 @@ class FootbagNetworkApp extends StatelessWidget {
       // Workaround for content sharings passed to go router:
       if ({
         'content',
-        'sharemedia-im.fluffychat.app',
+        'sharemedia-com.footbagnetwork.app',
       }.contains(state.uri.scheme)) {
         Logs().d('Ignore content sharing handling in go router', state.uri);
         return '/';

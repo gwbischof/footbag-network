@@ -516,7 +516,7 @@
         "type": "String",
         "placeholders": {}
     },
-    "inviteText": "{username} vás pozval na FluffyChat.\n1. Nainštalujte si FluffyChat: https://fluffychat.im\n2. Zaregistrujte sa alebo sa prihláste\n3. Otvorte odkaz na pozvánku: {link}",
+    "inviteText": "{username} vás pozval na Footbag Network.\n1. Nainštalujte si Footbag Network: https://footbag-network.korroni.com\n2. Zaregistrujte sa alebo sa prihláste\n3. Otvorte odkaz na pozvánku: {link}",
     "@inviteText": {
         "type": "String",
         "placeholders": {
@@ -643,8 +643,8 @@
         "type": "String",
         "placeholders": {}
     },
-    "newMessageInFluffyChat": "Nová správa v FluffyChate",
-    "@newMessageInFluffyChat": {
+    "newMessageInApp": "Nová správa v Footbag Network",
+    "@newMessageInApp": {
         "type": "String",
         "placeholders": {}
     },
@@ -658,7 +658,7 @@
         "type": "String",
         "placeholders": {}
     },
-    "noGoogleServicesWarning": "Zdá sa, že nemáte žiadne služby Googlu v telefóne. To je dobré rozhodnutie pre vaše súkromie! Ak chcete dostávať push notifikácie vo FluffyChat, odporúčame používať microG: https://microg.org/.",
+    "noGoogleServicesWarning": "Zdá sa, že nemáte žiadne služby Googlu v telefóne. To je dobré rozhodnutie pre vaše súkromie! Ak chcete dostávať push notifikácie vo Footbag Network, odporúčame používať microG: https://microg.org/.",
     "@noGoogleServicesWarning": {
         "type": "String",
         "placeholders": {}

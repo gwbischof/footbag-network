@@ -16,7 +16,7 @@
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		C1005C45261071B5002F4F32 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1005C44261071B5002F4F32 /* ShareViewController.swift */; };
 		C1005C48261071B5002F4F32 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1005C46261071B5002F4F32 /* MainInterface.storyboard */; };
-		C1005C4C261071B5002F4F32 /* FluffyChat Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C1005C42261071B5002F4F32 /* FluffyChat Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C1005C4C261071B5002F4F32 /* Footbag Network Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C1005C42261071B5002F4F32 /* Footbag Network Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C11184F53072567E00575032 /* FlutterGeneratedPluginSwiftPackage in Frameworks */ = {isa = PBXBuildFile; productRef = C11184F43072567E00575032 /* FlutterGeneratedPluginSwiftPackage */; };
 		C137635E2AD1446100A8F905 /* notification.caf in Resources */ = {isa = PBXBuildFile; fileRef = C137635D2AD1446100A8F905 /* notification.caf */; };
 		C14695592E642D400075F2F7 /* Notification Service Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C14695522E642D400075F2F7 /* Notification Service Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -32,7 +32,7 @@
 			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C1005C41261071B5002F4F32;
-			remoteInfo = "FluffyChat Share";
+			remoteInfo = "Footbag Network Share";
 		};
 		C14695572E642D400075F2F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -60,7 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				C1005C4C261071B5002F4F32 /* FluffyChat Share.appex in Embed App Extensions */,
+				C1005C4C261071B5002F4F32 /* Footbag Network Share.appex in Embed App Extensions */,
 				C14695592E642D400075F2F7 /* Notification Service Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -83,11 +83,11 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1005C42261071B5002F4F32 /* FluffyChat Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FluffyChat Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1005C42261071B5002F4F32 /* Footbag Network Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Footbag Network Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1005C44261071B5002F4F32 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		C1005C47261071B5002F4F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C1005C49261071B5002F4F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1005C53261072D4002F4F32 /* FluffyChat Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FluffyChat Share.entitlements"; sourceTree = "<group>"; };
+		C1005C53261072D4002F4F32 /* Footbag Network Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Footbag Network Share.entitlements"; sourceTree = "<group>"; };
 		C137635D2AD1446100A8F905 /* notification.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification.caf; sourceTree = "<group>"; };
 		C14695522E642D400075F2F7 /* Notification Service Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Notification Service Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14695652E642E450075F2F7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				C14695652E642E450075F2F7 /* Localizable.xcstrings */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
-				C1005C43261071B5002F4F32 /* FluffyChat Share */,
+				C1005C43261071B5002F4F32 /* Footbag Network Share */,
 				C14695532E642D400075F2F7 /* Notification Service Extension */,
 				97C146EF1CF9000F007C117D /* Products */,
 				C107717D3075192600D0BA63 /* Frameworks */,
@@ -172,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
-				C1005C42261071B5002F4F32 /* FluffyChat Share.appex */,
+				C1005C42261071B5002F4F32 /* Footbag Network Share.appex */,
 				C14695522E642D400075F2F7 /* Notification Service Extension.appex */,
 			);
 			name = Products;
@@ -196,15 +196,15 @@
 			path = Runner;
 			sourceTree = "<group>";
 		};
-		C1005C43261071B5002F4F32 /* FluffyChat Share */ = {
+		C1005C43261071B5002F4F32 /* Footbag Network Share */ = {
 			isa = PBXGroup;
 			children = (
-				C1005C53261072D4002F4F32 /* FluffyChat Share.entitlements */,
+				C1005C53261072D4002F4F32 /* Footbag Network Share.entitlements */,
 				C1005C44261071B5002F4F32 /* ShareViewController.swift */,
 				C1005C46261071B5002F4F32 /* MainInterface.storyboard */,
 				C1005C49261071B5002F4F32 /* Info.plist */,
 			);
-			path = "FluffyChat Share";
+			path = "Footbag Network Share";
 			sourceTree = "<group>";
 		};
 		C107717D3075192600D0BA63 /* Frameworks */ = {
@@ -243,9 +243,9 @@
 			productReference = 97C146EE1CF9000F007C117D /* Runner.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C1005C41261071B5002F4F32 /* FluffyChat Share */ = {
+		C1005C41261071B5002F4F32 /* Footbag Network Share */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1005C51261071B5002F4F32 /* Build configuration list for PBXNativeTarget "FluffyChat Share" */;
+			buildConfigurationList = C1005C51261071B5002F4F32 /* Build configuration list for PBXNativeTarget "Footbag Network Share" */;
 			buildPhases = (
 				C1005C3E261071B5002F4F32 /* Sources */,
 				C1005C3F261071B5002F4F32 /* Frameworks */,
@@ -255,12 +255,12 @@
 			);
 			dependencies = (
 			);
-			name = "FluffyChat Share";
+			name = "Footbag Network Share";
 			packageProductDependencies = (
 				C11184F43072567E00575032 /* FlutterGeneratedPluginSwiftPackage */,
 			);
-			productName = "FluffyChat Share";
-			productReference = C1005C42261071B5002F4F32 /* FluffyChat Share.appex */;
+			productName = "Footbag Network Share";
+			productReference = C1005C42261071B5002F4F32 /* Footbag Network Share.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		C14695512E642D400075F2F7 /* Notification Service Extension */ = {
@@ -325,7 +325,7 @@
 			projectRoot = "";
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
-				C1005C41261071B5002F4F32 /* FluffyChat Share */,
+				C1005C41261071B5002F4F32 /* Footbag Network Share */,
 				C14695512E642D400075F2F7 /* Notification Service Extension */,
 			);
 		};
@@ -429,7 +429,7 @@
 /* Begin PBXTargetDependency section */
 		C1005C4B261071B5002F4F32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C1005C41261071B5002F4F32 /* FluffyChat Share */;
+			target = C1005C41261071B5002F4F32 /* Footbag Network Share */;
 			targetProxy = C1005C4A261071B5002F4F32 /* PBXContainerItemProxy */;
 		};
 		C14695582E642D400075F2F7 /* PBXTargetDependency */ = {
@@ -546,7 +546,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MARKETING_VERSION = 0.32.1;
-				PRODUCT_BUNDLE_IDENTIFIER = im.fluffychat.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.footbagnetwork.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -692,7 +692,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MARKETING_VERSION = 0.32.1;
-				PRODUCT_BUNDLE_IDENTIFIER = im.fluffychat.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.footbagnetwork.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -730,7 +730,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MARKETING_VERSION = 0.32.1;
-				PRODUCT_BUNDLE_IDENTIFIER = im.fluffychat.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.footbagnetwork.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -748,12 +748,12 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "FluffyChat Share/FluffyChat Share.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Footbag Network Share/Footbag Network Share.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4HV29TJN3A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "FluffyChat Share/Info.plist";
+				INFOPLIST_FILE = "Footbag Network Share/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -763,7 +763,7 @@
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "im.fluffychat.app.FluffyChat-Share";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.footbagnetwork.app.Footbag-Network-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -783,12 +783,12 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "FluffyChat Share/FluffyChat Share.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Footbag Network Share/Footbag Network Share.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4HV29TJN3A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "FluffyChat Share/Info.plist";
+				INFOPLIST_FILE = "Footbag Network Share/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -797,7 +797,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "im.fluffychat.app.FluffyChat-Share";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.footbagnetwork.app.Footbag-Network-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
@@ -815,12 +815,12 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "FluffyChat Share/FluffyChat Share.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Footbag Network Share/Footbag Network Share.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4HV29TJN3A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "FluffyChat Share/Info.plist";
+				INFOPLIST_FILE = "Footbag Network Share/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -829,7 +829,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "im.fluffychat.app.FluffyChat-Share";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.footbagnetwork.app.Footbag-Network-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
@@ -869,7 +869,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "im.fluffychat.app.Notification-Service-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.footbagnetwork.app.Notification-Service-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -910,7 +910,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "im.fluffychat.app.Notification-Service-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.footbagnetwork.app.Notification-Service-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -949,7 +949,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "im.fluffychat.app.Notification-Service-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.footbagnetwork.app.Notification-Service-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -981,7 +981,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1005C51261071B5002F4F32 /* Build configuration list for PBXNativeTarget "FluffyChat Share" */ = {
+		C1005C51261071B5002F4F32 /* Build configuration list for PBXNativeTarget "Footbag Network Share" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1005C4E261071B5002F4F32 /* Debug */,

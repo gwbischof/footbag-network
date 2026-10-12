@@ -1249,7 +1249,7 @@
             }
         }
     },
-    "@newMessageInFluffyChat": {
+    "@newMessageInApp": {
         "type": "String",
         "placeholders": {}
     },
