@@ -11,7 +11,7 @@ import 'package:footbag_network/utils/client_download_content_extension.dart';
 import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:footbag_network/utils/notification_background_handler.dart';
 import 'package:footbag_network/utils/push_helper.dart';
-import 'package:footbag_network/widgets/fluffy_chat_app.dart';
+import 'package:footbag_network/widgets/footbag_network_app.dart';
 import 'package:footbag_network/widgets/incoming_call_dialog.dart';
 import 'package:footbag_network/widgets/matrix.dart';
 import 'package:material_ui/material_ui.dart';
@@ -27,7 +27,7 @@ extension LocalNotificationsExtension on MatrixState {
     if (event.type == RtcNotificationContent.eventType &&
         event.tryParseRtcNotificationContent()?.notificationType == .ring) {
       final context =
-          FluffyChatApp.router.routerDelegate.navigatorKey.currentContext ??
+          FootbagNetworkApp.router.routerDelegate.navigatorKey.currentContext ??
           this.context;
       showDialog<bool>(
         context: context,
@@ -36,7 +36,7 @@ extension LocalNotificationsExtension on MatrixState {
         if (joinCall != true) return;
         if (!context.mounted) return;
         setActiveClient(event.room.client);
-        FluffyChatApp.router.go('/rooms/${event.room.id}?action=call');
+        FootbagNetworkApp.router.go('/rooms/${event.room.id}?action=call');
       });
     }
 
@@ -113,17 +113,17 @@ extension LocalNotificationsExtension on MatrixState {
             EventTypes.Encrypted ||
             EventTypes.Sticker => [
               LinuxNotificationAction(
-                key: FluffyChatNotificationActions.markAsRead.name,
+                key: NotificationActions.markAsRead.name,
                 label: l10n.markAsRead,
               ),
               LinuxNotificationAction(
-                key: FluffyChatNotificationActions.mute.name,
+                key: NotificationActions.mute.name,
                 label: l10n.mute,
               ),
             ],
             RtcNotificationContent.eventType => [
               LinuxNotificationAction(
-                key: FluffyChatNotificationActions.enterCall.name,
+                key: NotificationActions.enterCall.name,
                 label: l10n.enterCall,
               ),
             ],
@@ -135,7 +135,7 @@ extension LocalNotificationsExtension on MatrixState {
           threadIdentifier: '${client.clientName}_${event.room.id}',
         ),
       ),
-      payload: FluffyChatPushPayload(
+      payload: PushPayload(
         client.clientName,
         event.room.id,
         event.eventId,

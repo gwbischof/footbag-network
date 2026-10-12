@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:footbag_network/main.dart' as app;
 
-extension type FluffyChatTester(WidgetTester tester) {
+extension type FootbagNetworkTester(WidgetTester tester) {
   static int _printCounter = 1;
 
   void _print(String message) {
@@ -120,9 +120,9 @@ extension on Object {
 }
 
 extension StartTest on WidgetTester {
-  Future<FluffyChatTester> startFluffyChatTest() async {
+  Future<FootbagNetworkTester> startFluffyChatTest() async {
     app.main(['integration_test']);
 
-    return FluffyChatTester(this);
+    return FootbagNetworkTester(this);
   }
 }

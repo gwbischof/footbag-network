@@ -205,8 +205,8 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           bottomNavigationBar: AnimatedSize(
-            duration: FluffyThemes.animationDuration,
-            curve: FluffyThemes.animationCurve,
+            duration: AppThemes.animationDuration,
+            curve: AppThemes.animationCurve,
             child:
                 selectedHomserver == null ||
                     !publicHomeservers.contains(selectedHomserver)

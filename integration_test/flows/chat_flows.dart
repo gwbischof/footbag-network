@@ -8,13 +8,13 @@ import 'package:footbag_network/pages/chat_list/chat_list.dart';
 import 'package:footbag_network/widgets/chat_settings_popup_menu.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../utils/fluffy_chat_tester.dart';
+import '../utils/footbag_network_tester.dart';
 import 'auth_flows.dart';
 
 Future<void> archiveChats(WidgetTester widgetTester) =>
     widgetTester.startFluffyChatTest().then((tester) => tester._archiveChats());
 
-extension ChatFlows on FluffyChatTester {
+extension ChatFlows on FootbagNetworkTester {
   static const String groupChatName = 'Test Group 01';
 
   Future<void> ensureGroupChatCreated() async {

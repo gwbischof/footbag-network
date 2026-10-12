@@ -8,7 +8,7 @@ import 'package:footbag_network/config/app_config.dart';
 import 'package:footbag_network/config/setting_keys.dart';
 import 'package:material_ui/material_ui.dart';
 
-abstract class FluffyThemes {
+abstract class AppThemes {
   static const double columnWidth = 380.0;
 
   static const double maxTimelineWidth = columnWidth * 2;
@@ -22,7 +22,7 @@ abstract class FluffyThemes {
       isColumnModeByWidth(MediaQuery.sizeOf(context).width);
 
   static bool isThreeColumnMode(BuildContext context) =>
-      MediaQuery.sizeOf(context).width > FluffyThemes.columnWidth * 3.5;
+      MediaQuery.sizeOf(context).width > AppThemes.columnWidth * 3.5;
 
   static LinearGradient backgroundGradient(BuildContext context, int alpha) {
     final colorScheme = Theme.of(context).colorScheme;
@@ -50,7 +50,7 @@ abstract class FluffyThemes {
       seedColor: seed ?? Color(AppSettings.colorSchemeSeedInt.value),
       dynamicSchemeVariant: DynamicSchemeVariant.rainbow,
     );
-    final isColumnMode = FluffyThemes.isColumnMode(context);
+    final isColumnMode = AppThemes.isColumnMode(context);
     final dividerColor = brightness == Brightness.dark
         ? colorScheme.surfaceContainerHighest
         : colorScheme.surfaceContainer;
@@ -117,7 +117,7 @@ abstract class FluffyThemes {
           ? const SnackBarThemeData(
               showCloseIcon: true,
               behavior: SnackBarBehavior.floating,
-              width: FluffyThemes.columnWidth * 1.5,
+              width: AppThemes.columnWidth * 1.5,
             )
           : const SnackBarThemeData(behavior: SnackBarBehavior.floating),
       elevatedButtonTheme: ElevatedButtonThemeData(

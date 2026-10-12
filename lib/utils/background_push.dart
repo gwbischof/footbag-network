@@ -17,7 +17,7 @@ import 'package:footbag_network/l10n/l10n.dart';
 import 'package:footbag_network/main.dart';
 import 'package:footbag_network/utils/notification_background_handler.dart';
 import 'package:footbag_network/utils/push_helper.dart';
-import 'package:footbag_network/widgets/fluffy_chat_app.dart';
+import 'package:footbag_network/widgets/footbag_network_app.dart';
 import 'package:http/http.dart' as http;
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
@@ -70,7 +70,7 @@ class BackgroundPush {
           await notificationTap(
             NotificationResponseJson.fromJsonString(message),
             clients: clients,
-            router: FluffyChatApp.router,
+            router: FootbagNetworkApp.router,
             l10n: l10n,
           );
         } catch (e, s) {
@@ -89,7 +89,7 @@ class BackgroundPush {
             await notificationTap(
               NotificationResponseJson.fromJsonString(message),
               clients: clients,
-              router: FluffyChatApp.router,
+              router: FootbagNetworkApp.router,
               l10n: l10n,
             );
           } catch (e, s) {
@@ -105,7 +105,7 @@ class BackgroundPush {
         onDidReceiveNotificationResponse: (response) => notificationTap(
           response,
           clients: clients,
-          router: FluffyChatApp.router,
+          router: FootbagNetworkApp.router,
           l10n: l10n,
         ),
         onDidReceiveBackgroundNotificationResponse: notificationTapBackground,
@@ -300,7 +300,7 @@ class BackgroundPush {
         notificationTap(
           response,
           clients: clients,
-          router: FluffyChatApp.router,
+          router: FootbagNetworkApp.router,
           l10n: l10n,
         );
       }

@@ -32,7 +32,7 @@ class CallPage extends StatelessWidget {
     final theme = Theme.of(context);
     final room = Matrix.of(context).client.getRoomById(roomId)!;
     final mini = Matrix.of(context).callPosition.value != .fullScreen;
-    final tileSize = FluffyThemes.isColumnMode(context) ? 256.0 : 128.0;
+    final tileSize = AppThemes.isColumnMode(context) ? 256.0 : 128.0;
     return ViewModelBuilder(
       create: () => CallViewModel(room: room),
       builder: (context, viewModel, _) {

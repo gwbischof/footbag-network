@@ -8,7 +8,7 @@ import 'dart:async';
 import 'package:footbag_network/l10n/l10n.dart';
 import 'package:footbag_network/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:footbag_network/widgets/adaptive_dialogs/show_text_input_dialog.dart';
-import 'package:footbag_network/widgets/fluffy_chat_app.dart';
+import 'package:footbag_network/widgets/footbag_network_app.dart';
 import 'package:footbag_network/widgets/matrix.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
@@ -18,7 +18,7 @@ extension UiaRequestManager on MatrixState {
   Future uiaRequestHandler(UiaRequest uiaRequest) async {
     final l10n = L10n.of(context);
     final navigatorContext =
-        FluffyChatApp.router.routerDelegate.navigatorKey.currentContext ??
+        FootbagNetworkApp.router.routerDelegate.navigatorKey.currentContext ??
         context;
     try {
       if (uiaRequest.state != UiaRequestState.waitForUser ||

@@ -30,7 +30,7 @@ class LoginScaffold extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isMobileMode = !FluffyThemes.isColumnModeByWidth(
+        final isMobileMode = !AppThemes.isColumnModeByWidth(
           constraints.maxWidth,
         );
         if (isMobileMode) {

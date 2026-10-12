@@ -31,8 +31,8 @@ class SettingsHomeserverView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: !FluffyThemes.isColumnMode(context),
-        centerTitle: FluffyThemes.isColumnMode(context),
+        automaticallyImplyLeading: !AppThemes.isColumnMode(context),
+        centerTitle: AppThemes.isColumnMode(context),
         title: Text(
           L10n.of(
             context,

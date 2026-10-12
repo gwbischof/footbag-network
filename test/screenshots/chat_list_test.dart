@@ -5,7 +5,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:footbag_network/config/setting_keys.dart';
-import 'package:footbag_network/widgets/fluffy_chat_app.dart';
+import 'package:footbag_network/widgets/footbag_network_app.dart';
 import 'package:golden_screenshot/golden_screenshot.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
@@ -34,7 +34,7 @@ void main() {
               ScreenshotApp.withConditionalTitlebar(
                 title: AppSettings.applicationName.value,
                 device: device.device,
-                home: FluffyChatApp(
+                home: FootbagNetworkApp(
                   clients: [client],
                   store: prefs,
                   appLockSettings: (pincode: null, useBiometrics: false),

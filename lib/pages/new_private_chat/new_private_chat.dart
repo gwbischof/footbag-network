@@ -11,7 +11,7 @@ import 'package:footbag_network/l10n/l10n.dart';
 import 'package:footbag_network/pages/new_private_chat/new_private_chat_view.dart';
 import 'package:footbag_network/pages/new_private_chat/qr_scanner_modal.dart';
 import 'package:footbag_network/utils/adaptive_bottom_sheet.dart';
-import 'package:footbag_network/utils/fluffy_share.dart';
+import 'package:footbag_network/utils/app_share.dart';
 import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:footbag_network/utils/url_launcher.dart';
 import 'package:footbag_network/widgets/matrix.dart';
@@ -83,7 +83,7 @@ class NewPrivateChatController extends State<NewPrivateChat> {
     return profiles;
   }
 
-  void inviteAction() => FluffyShare.shareInviteLink(context);
+  void inviteAction() => AppShare.shareInviteLink(context);
 
   Future<void> openScannerAction() async {
     final l10n = L10n.of(context);

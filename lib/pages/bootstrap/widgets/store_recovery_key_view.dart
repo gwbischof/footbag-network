@@ -5,7 +5,7 @@
 
 import 'package:footbag_network/l10n/l10n.dart';
 import 'package:footbag_network/pages/bootstrap/view_model/bootstrap_view_model.dart';
-import 'package:footbag_network/utils/fluffy_share.dart';
+import 'package:footbag_network/utils/app_share.dart';
 import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -30,7 +30,7 @@ class StoreRecoveryKeyView extends StatelessWidget {
             suffixIcon: IconButton(
               icon: Icon(Icons.copy_outlined),
               onPressed: () =>
-                  FluffyShare.share(viewModel.value.recoveryKey!, context),
+                  AppShare.share(viewModel.value.recoveryKey!, context),
             ),
           ),
         ),

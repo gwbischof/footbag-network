@@ -44,8 +44,8 @@ class EncryptionInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return AnimatedSize(
-      duration: FluffyThemes.animationDuration,
-      curve: FluffyThemes.animationCurve,
+      duration: AppThemes.animationDuration,
+      curve: AppThemes.animationCurve,
       child: FutureBuilder(
         future: _unverifiedDevices(),
         builder: (context, asyncSnapshot) {

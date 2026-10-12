@@ -21,7 +21,7 @@ class ChatListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final oneColumnSpacesMode =
-        !FluffyThemes.isColumnMode(context) &&
+        !AppThemes.isColumnMode(context) &&
         AppSettings.displayNavigationRail.value;
     return PopScope(
       canPop: !controller.isSearchMode && controller.activeSpaceId == null,
@@ -41,10 +41,10 @@ class ChatListView extends StatelessWidget {
           Material(
             color: Theme.of(context).colorScheme.surface,
             child: AnimatedSize(
-              duration: FluffyThemes.animationDuration,
-              curve: FluffyThemes.animationCurve,
+              duration: AppThemes.animationDuration,
+              curve: AppThemes.animationCurve,
               child:
-                  (FluffyThemes.isColumnMode(context) ||
+                  (AppThemes.isColumnMode(context) ||
                       AppSettings.displayNavigationRail.value)
                   ? SpacesNavigationRail(
                       activeSpaceId: controller.activeSpaceId,
@@ -57,9 +57,9 @@ class ChatListView extends StatelessWidget {
                     ),
             ),
           ),
-          if (FluffyThemes.isColumnMode(context) ||
+          if (AppThemes.isColumnMode(context) ||
               AppSettings.displayNavigationRail.value)
-            if (FluffyThemes.isColumnMode(context))
+            if (AppThemes.isColumnMode(context))
               Container(width: 1, color: Theme.of(context).dividerColor),
 
           Expanded(
@@ -94,7 +94,7 @@ class ChatListView extends StatelessWidget {
                 floatingActionButton:
                     !controller.isSearchMode &&
                         controller.activeSpaceId == null &&
-                        !FluffyThemes.isColumnMode(context)
+                        !AppThemes.isColumnMode(context)
                     ? ValueListenableBuilder(
                         valueListenable: controller.scrolledToTop,
                         builder: (context, scrolledToTop, _) => StartChatFab(

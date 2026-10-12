@@ -29,8 +29,8 @@ class CallOverlay extends StatelessWidget {
               children: [
                 child,
                 AnimatedPositioned(
-                  duration: FluffyThemes.animationDuration,
-                  curve: FluffyThemes.animationCurve,
+                  duration: AppThemes.animationDuration,
+                  curve: AppThemes.animationCurve,
                   top: callFullScreen
                       ? 0
                       : callPosition == .top

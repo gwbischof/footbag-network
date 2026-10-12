@@ -27,8 +27,8 @@ class SettingsChatView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(L10n.of(context).chat),
-        automaticallyImplyLeading: !FluffyThemes.isColumnMode(context),
-        centerTitle: FluffyThemes.isColumnMode(context),
+        automaticallyImplyLeading: !AppThemes.isColumnMode(context),
+        centerTitle: AppThemes.isColumnMode(context),
       ),
       body: ListTileTheme(
         iconColor: theme.textTheme.bodyLarge!.color,

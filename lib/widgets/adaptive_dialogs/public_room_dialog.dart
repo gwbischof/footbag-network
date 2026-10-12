@@ -6,7 +6,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:footbag_network/l10n/l10n.dart';
-import 'package:footbag_network/utils/fluffy_share.dart';
+import 'package:footbag_network/utils/app_share.dart';
 import 'package:footbag_network/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:footbag_network/widgets/adaptive_dialogs/show_text_input_dialog.dart';
 import 'package:go_router/go_router.dart';
@@ -166,9 +166,9 @@ class PublicRoomDialog extends StatelessWidget {
                                                   right: 4.0,
                                                 ),
                                                 child: AnimatedScale(
-                                                  duration: FluffyThemes
+                                                  duration: AppThemes
                                                       .animationDuration,
-                                                  curve: FluffyThemes
+                                                  curve: AppThemes
                                                       .animationCurve,
                                                   scale: hovered
                                                       ? 1.33
@@ -278,7 +278,7 @@ class PublicRoomDialog extends StatelessWidget {
                       AdaptiveIconTextButton(
                         label: L10n.of(context).share,
                         icon: Icons.adaptive.share,
-                        onTap: () => FluffyShare.share(
+                        onTap: () => AppShare.share(
                           'https://matrix.to/#/$roomLink',
                           context,
                         ),

@@ -18,7 +18,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('Test if the app starts', (WidgetTester tester) async {
-    /* await tester.pumpWidget(FluffyChatApp(
+    /* await tester.pumpWidget(FootbagNetworkApp(
       client: await prepareTestClient(),
     ));*/
     return;

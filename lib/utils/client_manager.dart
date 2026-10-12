@@ -176,7 +176,7 @@ abstract class ClientManager {
         android: const AndroidInitializationSettings('notifications_icon'),
         iOS: const DarwinInitializationSettings(),
         linux: LinuxInitializationSettings(
-          defaultActionName: FluffyChatNotificationActions.open.name,
+          defaultActionName: NotificationActions.open.name,
         ),
         windows: windowsNotificationSettings,
         macOS: const DarwinInitializationSettings(),

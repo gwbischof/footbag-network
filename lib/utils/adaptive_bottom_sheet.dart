@@ -16,7 +16,7 @@ Future<T?> showAdaptiveBottomSheet<T>({
   bool isScrollControlled = true,
   bool useRootNavigator = true,
 }) {
-  if (FluffyThemes.isColumnMode(context)) {
+  if (AppThemes.isColumnMode(context)) {
     return showDialog<T>(
       context: context,
       useRootNavigator: useRootNavigator,

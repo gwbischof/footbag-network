@@ -17,7 +17,7 @@ import 'package:footbag_network/utils/notification_background_handler.dart';
 import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:footbag_network/utils/uia_request_manager.dart';
 import 'package:footbag_network/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
-import 'package:footbag_network/widgets/fluffy_chat_app.dart';
+import 'package:footbag_network/widgets/footbag_network_app.dart';
 import 'package:footbag_network/widgets/future_loading_dialog.dart';
 import 'package:intl/intl.dart';
 import 'package:just_audio/just_audio.dart';
@@ -165,7 +165,7 @@ class MatrixState extends State<Matrix> {
                 _registerSubs(_loginClientCandidate!.clientName);
                 setActiveClient(_loginClientCandidate);
                 _loginClientCandidate = null;
-                FluffyChatApp.router.go('/backup');
+                FootbagNetworkApp.router.go('/backup');
               });
     if (widget.clients.isEmpty) widget.clients.add(candidate);
     return candidate;
@@ -196,7 +196,7 @@ class MatrixState extends State<Matrix> {
   }
 
   String? get activeRoomId {
-    final route = FluffyChatApp.router.routeInformationProvider.value.uri.path;
+    final route = FootbagNetworkApp.router.routeInformationProvider.value.uri.path;
     if (!route.startsWith('/rooms/')) return null;
     return route.split('/')[2];
   }
@@ -241,14 +241,14 @@ class MatrixState extends State<Matrix> {
                   KeyVerificationState.done,
                   KeyVerificationState.error,
                 }.contains(request.state)) {
-              FluffyChatApp.router.pop('dialog');
+              FootbagNetworkApp.router.pop('dialog');
             }
             hidPopup = true;
           };
           request.onUpdate = null;
           hidPopup = true;
           await KeyVerificationDialog(request: request).show(
-            FluffyChatApp.router.routerDelegate.navigatorKey.currentContext ??
+            FootbagNetworkApp.router.routerDelegate.navigatorKey.currentContext ??
                 context,
           );
         });
@@ -264,7 +264,7 @@ class MatrixState extends State<Matrix> {
 
           if (loggedInWithMultipleClients) {
             final snackbarContext =
-                FluffyChatApp
+                FootbagNetworkApp
                     .router
                     .routerDelegate
                     .navigatorKey
@@ -278,14 +278,14 @@ class MatrixState extends State<Matrix> {
             ).showSnackBar(SnackBar(content: Text(l10n.oneClientLoggedOut)));
             return;
           }
-          FluffyChatApp.router.go('/');
+          FootbagNetworkApp.router.go('/');
         });
     onUiaRequest[name] ??= c.onUiaRequest.stream.listen(uiaRequestHandler);
     if (PlatformInfos.isWeb || PlatformInfos.isDesktop) {
       FlutterLocalNotificationsPlugin().initialize(
         settings: InitializationSettings(
           linux: LinuxInitializationSettings(
-            defaultActionName: FluffyChatNotificationActions.open.name,
+            defaultActionName: NotificationActions.open.name,
           ),
           windows: ClientManager.windowsNotificationSettings,
           macOS: const DarwinInitializationSettings(),
@@ -295,7 +295,7 @@ class MatrixState extends State<Matrix> {
         onDidReceiveNotificationResponse: (response) => notificationTap(
           response,
           clients: widget.clients,
-          router: FluffyChatApp.router,
+          router: FootbagNetworkApp.router,
           l10n: null,
         ),
       );
@@ -329,7 +329,7 @@ class MatrixState extends State<Matrix> {
         this,
         onFcmError: (errorMsg, {Uri? link}) async {
           final context =
-              FluffyChatApp.router.routerDelegate.navigatorKey.currentContext ??
+              FootbagNetworkApp.router.routerDelegate.navigatorKey.currentContext ??
               this.context;
           if (!context.mounted) return;
           final result = await showOkCancelAlertDialog(

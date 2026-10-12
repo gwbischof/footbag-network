@@ -7,8 +7,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:footbag_network/config/themes.dart';
 import 'package:footbag_network/l10n/l10n.dart';
+import 'package:footbag_network/utils/app_share.dart';
 import 'package:footbag_network/utils/date_time_extension.dart';
-import 'package:footbag_network/utils/fluffy_share.dart';
 import 'package:footbag_network/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 import 'package:footbag_network/widgets/adaptive_dialogs/show_text_input_dialog.dart';
 import 'package:footbag_network/widgets/avatar.dart';
@@ -121,8 +121,8 @@ class UserDialog extends StatelessWidget {
                                           ),
                                           child: AnimatedScale(
                                             duration:
-                                                FluffyThemes.animationDuration,
-                                            curve: FluffyThemes.animationCurve,
+                                                AppThemes.animationDuration,
+                                            curve: AppThemes.animationCurve,
                                             scale: hovered
                                                 ? 1.33
                                                 : copied
@@ -238,7 +238,7 @@ class UserDialog extends StatelessWidget {
                   AdaptiveIconTextButton(
                     label: L10n.of(context).share,
                     icon: Icons.adaptive.share,
-                    onTap: () => FluffyShare.share(
+                    onTap: () => AppShare.share(
                       'https://matrix.to/#/${profile.userId}',
                       context,
                     ),

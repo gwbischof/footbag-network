@@ -6,7 +6,7 @@
 import 'package:async/async.dart';
 import 'package:footbag_network/config/setting_keys.dart';
 import 'package:footbag_network/l10n/l10n.dart';
-import 'package:footbag_network/utils/fluffy_share.dart';
+import 'package:footbag_network/utils/app_share.dart';
 import 'package:footbag_network/utils/platform_infos.dart';
 import 'package:footbag_network/widgets/avatar.dart';
 import 'package:footbag_network/widgets/matrix.dart';
@@ -98,7 +98,7 @@ class SettingsView extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () => FluffyShare.share(mxid, context),
+                      onPressed: () => AppShare.share(mxid, context),
                       style: TextButton.styleFrom(
                         foregroundColor: theme.colorScheme.secondary,
                         iconColor: theme.colorScheme.secondary,

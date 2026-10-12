@@ -8,12 +8,12 @@ import 'package:footbag_network/pages/sign_in/view_model/model/public_homeserver
 import 'package:material_ui/material_ui.dart';
 
 import '../data/environment_constants.dart';
-import '../utils/fluffy_chat_tester.dart';
+import '../utils/footbag_network_tester.dart';
 
 Future<void> finalLogout(WidgetTester widgetTester) =>
     widgetTester.startFluffyChatTest().then((tester) => tester.logout());
 
-extension AuthFlows on FluffyChatTester {
+extension AuthFlows on FootbagNetworkTester {
   Future<void> initCryptoIdentity({String username = user1Name}) async {
     final passphrase = userPassphrases[username];
     if (passphrase != null) {

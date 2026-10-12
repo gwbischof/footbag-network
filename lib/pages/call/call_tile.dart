@@ -46,7 +46,7 @@ class CallTile extends StatelessWidget {
       height: height,
       child: AnimatedContainer(
         margin: margin,
-        duration: FluffyThemes.animationDuration,
+        duration: AppThemes.animationDuration,
         decoration: BoxDecoration(
           color: theme.colorScheme.surfaceContainer,
           border: BoxBorder.all(

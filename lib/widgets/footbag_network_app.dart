@@ -22,14 +22,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/custom_scroll_behaviour.dart';
 import 'matrix.dart';
 
-class FluffyChatApp extends StatelessWidget {
+class FootbagNetworkApp extends StatelessWidget {
   final Widget? testWidget;
   final List<Client> clients;
   final ({String? pincode, bool useBiometrics}) appLockSettings;
   final SharedPreferences store;
   final Locale? locale;
 
-  const FluffyChatApp({
+  const FootbagNetworkApp({
     super.key,
     this.testWidget,
     required this.clients,
@@ -91,8 +91,8 @@ class FluffyChatApp extends StatelessWidget {
         themeMode: themeMode,
         debugShowCheckedModeBanner: false,
         locale: locale,
-        theme: FluffyThemes.buildTheme(context, Brightness.light, primaryColor),
-        darkTheme: FluffyThemes.buildTheme(
+        theme: AppThemes.buildTheme(context, Brightness.light, primaryColor),
+        darkTheme: AppThemes.buildTheme(
           context,
           Brightness.dark,
           primaryColor,

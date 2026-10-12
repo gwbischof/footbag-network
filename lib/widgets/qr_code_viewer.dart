@@ -6,7 +6,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:footbag_network/config/app_config.dart';
 import 'package:footbag_network/l10n/l10n.dart';
-import 'package:footbag_network/utils/fluffy_share.dart';
+import 'package:footbag_network/utils/app_share.dart';
 import 'package:footbag_network/utils/matrix_sdk_extensions/matrix_file_extension.dart';
 import 'package:footbag_network/widgets/future_loading_dialog.dart';
 import 'package:image/image.dart';
@@ -74,7 +74,7 @@ class QrCodeViewer extends StatelessWidget {
               backgroundColor: Colors.black.withAlpha(128),
             ),
             icon: Icon(Icons.adaptive.share_outlined),
-            onPressed: () => FluffyShare.share(inviteLink, context),
+            onPressed: () => AppShare.share(inviteLink, context),
             color: Colors.white,
             tooltip: L10n.of(context).share,
           ),
@@ -112,7 +112,7 @@ class QrCodeViewer extends StatelessWidget {
                 children: [
                   ConstrainedBox(
                     constraints: const BoxConstraints(
-                      maxWidth: FluffyThemes.columnWidth,
+                      maxWidth: AppThemes.columnWidth,
                     ),
                     child: PrettyQrView.data(
                       data: inviteLink,
